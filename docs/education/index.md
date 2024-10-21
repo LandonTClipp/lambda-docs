@@ -27,7 +27,6 @@ hide:
 - [Troubleshooting and debugging](linux-usage/troubleshooting-and-debugging.md)
 - [Using the Lambda bug report to troubleshoot your system](linux-usage/using-the-lambda-bug-report-to-troubleshoot-your-system.md)
 - [Using the nvidia-bug-report.log file to troubleshoot your system](linux-usage/using-the-nvidia-bug-report.log-file-to-troubleshoot-your-system.md)
-- [Using KubeAI to deploy Nous Research's Hermes 3 and other LLMs](large-language-models/kubeai-hermes-3.md)
 
 ## Programming
 
