@@ -1,6 +1,6 @@
 site_description: Lambda GPU Cloud documentation
 site_name: Lambda Docs
-site_url: https://cbrownstein-lambda.github.io/lambda-docs-mkdocs/
+site_url: https://docs.lambdalabs.com/
 theme:
   name: material
   features:
