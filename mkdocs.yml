@@ -53,8 +53,7 @@ nav:
       - 'Main site': 'https://lambdalabs.com/'
       - 'Tags index': 'tags.md'
     - We welcome your feedback!:
-      # URL needs to change post migration
-      - 'File an issue': 'https://github.com/cbrownstein-lambda/lambda-docs-mkdocs/issues/new/choose'
+      - 'File an issue': 'https://github.com/LambdaLabs/lambda-docs/issues/new/choose'
   - Private Cloud:
     - private-cloud/index.md
     - Managed Kubernetes:
@@ -68,7 +67,7 @@ nav:
       - 'Tags index': 'tags.md'
     - We welcome your feedback!:
       # URL needs to change post migration
-      - 'File an issue': 'https://github.com/cbrownstein-lambda/lambda-docs-mkdocs/issues/new/choose'
+      - 'File an issue': 'https://github.com/LambdaLabs/lambda-docs/issues/new/choose'
   - Hardware:
       - hardware/index.md
       - Servers:
@@ -84,7 +83,7 @@ nav:
         - 'Tags index': 'tags.md'
       - We welcome your feedback!:
         # URL needs to change post migration
-        - 'File an issue': 'https://github.com/cbrownstein-lambda/lambda-docs-mkdocs/issues/new/choose'
+        - 'File an issue': 'https://github.com/LambdaLabs/lambda-docs/issues/new/choose'
   - Education:
     - education/index.md
     - education/tutorial-getting-started-with-training-a-machine-learning-model.md
@@ -117,7 +116,7 @@ nav:
       - 'Tags index': 'tags.md'
     - We welcome your feedback!:
       # URL needs to change post migration
-      - 'File an issue': 'https://github.com/cbrownstein-lambda/lambda-docs-mkdocs/issues/new/choose'
+      - 'File an issue': 'https://github.com/LambdaLabs/lambda-docs/issues/new/choose'
 
 markdown_extensions:
   - admonition
