@@ -10,11 +10,11 @@ tags:
 
 ## How do I set up my workstation?
 
-Instructions for setting up your Vector can be found in our Vector quickstart
-guide.
+Instructions for setting up your Vector can be found in our
+[:material-file-pdf-box: Vector quickstart guide](../../assets/docs/vector_quickstart_guide.pdf){ target="_blank" }.
 
-Instructions for setting up your Vector One can be found in our Vector One
-quickstart guide.
+Instructions for setting up your Vector One can be found in our
+[:material-file-pdf-box: Vector One quickstart guide](../../assets/docs/lambda_vector_one_quickstart_guide.pdf){ target="_blank" }.
 
 ## What are the buttons and ports at the front and top of my Vector One?
 
