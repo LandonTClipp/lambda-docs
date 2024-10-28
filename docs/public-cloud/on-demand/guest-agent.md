@@ -12,6 +12,21 @@ tags:
     The guest agent is currently a Beta release. See [Notes About Beta](#notes-about-beta)
     for more information.
 
+    Lambda is providing access to the guest-agent before the visualizations are available
+    on lambdalabs.com. The configuration that allows the self-hosted Prometheus and
+    Grafana installations to scrape guest-agent metrics will be removed when the
+    visualizations are fully available on lambdalabs.com. The full release of
+    front-end visualizations will be available some time in 2025.
+
+    As this project is Beta, it might contain bugs, incomplete features, and other
+    issues that might affect performance, security, and reliability. We also reserve
+    the right to make breaking changes to the service. Because of these reasons,
+    **the guest agent currently should only be used for testing and evaluation.**
+
+    Please report any bugs you
+    encounter to [Lambda's Support team
+    :octicons-link-external-16:](https://lambdalabs.com/support){target="_blank"}.
+
 ## Introduction
 
 lambda-guest-agent is a new service that Lambda provides that is installed on
@@ -216,20 +231,3 @@ apt package. Upon removal, the package will stop disable all services:
 ```
 apt remove lambda-guest-agent
 ```
-
-## Notes About Beta
-
-Lambda is providing access to the guest-agent before the visualizations are available
-on lambdalabs.com. The configuration that allows the self-hosted Prometheus and
-Grafana installations to scrape guest-agent metrics will be removed when the
-visualizations are fully available on lambdalabs.com. The full release of
-front-end visualizations will be available some time in 2025.
-
-As this project is Beta, it might contain bugs, incomplete features, and other
-issues that might affect performance, security, and reliability. We also reserve
-the right to make breaking changes to the service. Because of these reasons,
-**the guest agent currently should only be used for testing and evaluation.**
-
-Please report any bugs you
-encounter to [Lambda's Support team
-:octicons-link-external-16:](https://lambdalabs.com/support){target="_blank"}.
