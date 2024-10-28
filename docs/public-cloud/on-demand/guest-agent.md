@@ -11,20 +11,23 @@ tags:
 
     The guest agent is currently a Beta release.
 
-    Lambda is providing access to the guest-agent before the visualizations are available
-    on lambdalabs.com. The configuration that allows the self-hosted Prometheus and
-    Grafana installations to scrape guest-agent metrics will be removed when the
-    visualizations are fully available on lambdalabs.com. The full release of
-    front-end visualizations will be available some time in 2025.
+    Lambda is providing access to the guest-agent before the visualizations are
+    available on
+    [lambdalabs.com](https://lambdalabs.com/){ .external target="_blank" }. The
+    configuration that allows the self-hosted Prometheus and Grafana
+    installations to scrape guest-agent metrics will be removed when the
+    visualizations are fully available on
+    [lambdalabs.com](https://lambdalabs.com/){ .external target="_blank" }. The
+    full release of front-end visualizations will be available some time in
+    2025.
 
     As this project is Beta, it might contain bugs, incomplete features, and other
     issues that might affect performance, security, and reliability. We also reserve
     the right to make breaking changes to the service. Because of these reasons,
     **the guest agent currently should only be used for testing and evaluation.**
 
-    Please report any bugs you
-    encounter to [Lambda's Support team
-    :octicons-link-external-16:](https://lambdalabs.com/support){target="_blank"}.
+    Please report any bugs you encounter to
+    [Lambda's Support team](https://lambdalabs.com/support){ .external target="_blank" }.
 
 ## Introduction
 
@@ -52,10 +55,10 @@ flowchart LR
     FrontEnd -->|WIP: Front-End Visualizations| prometheus
 ```
 
-In this tutorial, you'll install the guest agent and set up [Prometheus
-:octicons-link-external-16:](https://www.prometheus.io/){target="_blank"} and
-[Grafana :octicons-link-external-16:](https://grafana.com/){target="_blank"}
-with an example dashboard so you can visualize the collected metrics.
+In this tutorial, you'll install the guest agent and set up
+[Prometheus](https://www.prometheus.io/){ .external target="_blank" } and
+[Grafana](https://grafana.com/){ .external target="_blank" } with an example
+dashboard so you can visualize the collected metrics.
 
 
 ## Install the guest agent
@@ -74,8 +77,8 @@ Replace `IP-ADDRESS` with the actual IP address of your instance.
 
     The `-L 3000:localhost:3000` option enables local port forwarding. Local
     port forwarding is needed to access the Grafana dashboard you'll create
-    in a later step. [See the SSH man page to learn
-    more](https://manpages.ubuntu.com/manpages/jammy/en/man1/ssh.1.html).
+    in a later step.
+    [See the SSH man page to learn more](https://manpages.ubuntu.com/manpages/jammy/en/man1/ssh.1.html){ .external target="_blank" }.
 
 Then, download and install the guest agent by running:
 
@@ -122,9 +125,10 @@ and Grafana installation to get access to the guest-agent metrics.
 
 To set up Prometheus and Grafana:
 
-1. Clone the [Awesome Compose GitHub repository
-   :octicons-link-external-16:](https://github.com/docker/awesome-compose){target="_blank"}
-   and change into the `awesome-compose/prometheus-grafana` directory by running:
+1. Clone the
+   [Awesome Compose GitHub repository](https://github.com/docker/awesome-compose){ .external target="_blank" }
+   and change into the `awesome-compose/prometheus-grafana` directory by
+   running:
 
     ```bash
     git clone https://github.com/docker/awesome-compose.git && cd awesome-compose/prometheus-grafana
@@ -180,19 +184,18 @@ To set up Prometheus and Grafana:
     sudo docker compose up -d
     ```
 
-1. In your web browser, go to [http://localhost:3000
-   :octicons-link-external-16:](http://localhost:3000){target="_blank"} and log
-   into Grafana. For the username, enter `admin`. For the password, enter the
-   password you set earlier.
+1. In your web browser, go to
+   [http://localhost:3000](http://localhost:3000){ .external target="_blank" }
+   and log into Grafana. For the username, enter `admin`. For the password,
+   enter the password you set earlier.
 
 1. At the top-right of the dashboard, click the **+**. Then, choose **Import
    dashboard**.
 
     ![Screenshot of how to import dashboard](../../assets/images/import-dashboard.png)
 
-1. In the **Import via dashboard JSON model** field, enter the [example JSON
-   model
-   :octicons-link-external-16:](https://gist.githubusercontent.com/LandonTClipp/964e90507d660e3fb710b4137be6cd6f/raw/bc7abd797da65581534513c153d1ad3d1b8e4bbe/lambda-guest-agent-grafana-model.json){target="_blank"}
+1. In the **Import via dashboard JSON model** field, enter the
+   [example JSON model](https://gist.githubusercontent.com/LandonTClipp/964e90507d660e3fb710b4137be6cd6f/raw/bc7abd797da65581534513c153d1ad3d1b8e4bbe/lambda-guest-agent-grafana-model.json){ .external target="_blank" }{target="_blank"}
    prepared for this tutorial, then click **Load**. In the following screen,
    click **Import**.
 
