@@ -71,18 +71,14 @@ Make a local copy of the GitHub repository
 
 ### Configure MKdocs in Docker
 
-1. Build the container:
+Running mkdocs in docker is as simple as using Make:
 
-   ```bash
-   docker build -t lambda-docs-mkdocs .
-   ```
+```
+$ make serve
+```
 
-1. Run the container:
+This will optionally build the image and start the development server that listens on port 8000.
 
-   ```bash
-   docker run --rm -it -p 8000:8000 -v ${PWD}:/docs lambda-docs-mkdocs serve
-   ```
-
-1. Once the container is running, open a browser window and paste `http://127.0.0.1:8000/lambda-docs-mkdocs` into the search bar and press enter.
+Once the container is running, open a browser window and paste `http://127.0.0.1:8000/lambda-docs-mkdocs` into the search bar and press enter.
 
 Congratulation, your local preview is now live inside of a container!
