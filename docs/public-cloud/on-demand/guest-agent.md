@@ -1,35 +1,48 @@
 ---
-description: Install the guest agent and get started with Prometheus and Grafana.
+description: How to install and run the Lambda Guest Agent.
 tags:
   - 1-click clusters
   - on-demand cloud
 ---
 
-# Installing the guest agent and getting started with Prometheus and Grafana
+# Guest Agent
+
+!!! warning "Beta Release"
+
+    The guest agent is currently a Beta release. See [Notes About Beta](#notes-about-beta)
+    for more information.
 
 ## Introduction
 
-!!! note
+lambda-guest-agent is a new service that Lambda provides that is installed on
+customer VMs. The service collects a number of hardware-level details about VM
+vitals, such as CPU utilization, GPU utilization, network IO, disk IO, etc and
+forwards them into a metrics backend for display in visualizations.
 
-    The guest agent is currently an alpha release. The guest agent is under
-    active development and might contain bugs, incomplete features, and other
-    issues that might affect performance, security, and reliability. The guest
-    agent currently should only be used for testing and evaluation.
+The general flow of metrics can be described as such:
 
-    **The guest agent currently shouldn't be used in production environments**.
+```mermaid
+flowchart LR
+    prometheus[Prometheus]
+    FrontEnd[lambdalabs.com]
+    subgraph Hypervisor
+        subgraph VM
+            guestAgent[Guest Agent]
+        end
 
-    Please report any bugs you
-    encounter to [Lambda's Support team
-    :octicons-link-external-16:](https://lambdalabs.com/support){target="_blank"}.
+        MetricsForwarder[Lambda Metrics Forwarder]
+        MetricsForwarder --> guestAgent
 
-You can install the guest agent on your [Lambda Public Cloud
-:octicons-link-external-16:](https://lambdalabs.com/service/gpu-cloud){target="_blank"}
-on-demand instances to gather metrics such as GPU and CPU utilization.
+    end
+    prometheus -->|Prom HTTP over TCP| MetricsForwarder
+    FrontEnd -->|WIP: Front-End Visualizations| prometheus
+```
 
 In this tutorial, you'll install the guest agent and set up [Prometheus
 :octicons-link-external-16:](https://www.prometheus.io/){target="_blank"} and
 [Grafana :octicons-link-external-16:](https://grafana.com/){target="_blank"}
 with an example dashboard so you can visualize the collected metrics.
+
 
 ## Install the guest agent
 
@@ -56,7 +69,42 @@ Then, download and install the guest agent by running:
 curl -L https://lambdalabs-guest-agent.s3.us-west-2.amazonaws.com/scripts/install.sh | sudo bash
 ```
 
+You can confirm it's running by inspecting the systemd services:
+
+```text
+root@192-222-52-58:/home/ubuntu# systemctl status lambda-guest-agent*
+● lambda-guest-agent.service - Lambda metrics and observability agent
+     Loaded: loaded (/etc/systemd/system/lambda-guest-agent.service; enabled; vendor preset: enabled)
+     Active: active (running) since Mon 2024-10-28 20:58:44 UTC; 18s ago
+   Main PID: 68284 (telegraf)
+      Tasks: 18 (limit: 271525)
+     Memory: 11.5M
+        CPU: 572ms
+     CGroup: /system.slice/lambda-guest-agent.service
+             └─68284 /usr/local/bin/lambda/guest-agent/telegraf -config /etc/lambda/guest-agent/telegraf/telegraf.conf
+
+● lambda-guest-agent-updater.timer - Lambda metrics and observability agent updater
+     Loaded: loaded (/etc/systemd/system/lambda-guest-agent-updater.timer; enabled; vendor preset: enabled)
+     Active: active (waiting) since Mon 2024-10-28 20:58:44 UTC; 18s ago
+    Trigger: Tue 2024-11-05 10:27:09 UTC; 1 week 0 days left
+   Triggers: ● lambda-guest-agent-updater.service
+
+Oct 28 20:58:44 192-222-52-58 systemd[1]: Started Lambda metrics and observability agent updater.
+
+● lambda-guest-agent-updater.service - Lambda metrics and observability agent updater
+     Loaded: loaded (/etc/systemd/system/lambda-guest-agent-updater.service; enabled; vendor preset: enabled)
+     Active: active (exited) since Mon 2024-10-28 20:58:50 UTC; 12s ago
+TriggeredBy: ● lambda-guest-agent-updater.timer
+    Process: 68290 ExecStart=/bin/bash /usr/local/bin/lambda/guest-agent/guest-agent-update.sh (code=exited, status=0/SUCCESS)
+   Main PID: 68290 (code=exited, status=0/SUCCESS)
+        CPU: 4.845s
+```
+
 ## Set up Prometheus and Grafana
+
+Lambda is providing access to guest-agent before metrics are available on LambdaLabs.com.
+Until that is available, these are steps you can follow to self-host a Prometheus
+and Grafana installation to get access to the guest-agent metrics.
 
 To set up Prometheus and Grafana:
 
@@ -149,3 +197,39 @@ To set up Prometheus and Grafana:
         On-demand instances, unlike
         [1-Click Clusters](../1-click-clusters/index.md), don't use InfiniBand
         fabric. Accordingly, the InfiniBand transfer rates will always be zero.
+
+## Updates
+
+The guest-agent will automatically update itself on a two-week cadence. You may disable
+updates by stopping and disabling the `lambda-guest-agent-updater.timer` systemd unit:
+
+```
+systemctl stop lambda-guest-agent-updater.timer
+systemctl disable lambda-guest-agent-updater.timer
+```
+
+## Disablement
+
+Furthermore, you may disable the guest-agent entirely by removing the guest-agent
+apt package. Upon removal, the package will stop disable all services:
+
+```
+apt remove lambda-guest-agent
+```
+
+## Notes About Beta
+
+Lambda is providing access to the guest-agent before the visualizations are available
+on lambdalabs.com. The configuration that allows the self-hosted Prometheus and
+Grafana installations to scrape guest-agent metrics will be removed when the
+visualizations are fully available on lambdalabs.com. The full release of
+front-end visualizations will be available some time in 2025.
+
+As this project is Beta, it might contain bugs, incomplete features, and other
+issues that might affect performance, security, and reliability. We also reserve
+the right to make breaking changes to the service. Because of these reasons,
+**the guest agent currently should only be used for testing and evaluation.**
+
+Please report any bugs you
+encounter to [Lambda's Support team
+:octicons-link-external-16:](https://lambdalabs.com/support){target="_blank"}.
