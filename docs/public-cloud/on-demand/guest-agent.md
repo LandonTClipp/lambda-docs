@@ -9,8 +9,7 @@ tags:
 
 !!! warning "Beta Release"
 
-    The guest agent is currently a Beta release. See [Notes About Beta](#notes-about-beta)
-    for more information.
+    The guest agent is currently a Beta release.
 
     Lambda is providing access to the guest-agent before the visualizations are available
     on lambdalabs.com. The configuration that allows the self-hosted Prometheus and
