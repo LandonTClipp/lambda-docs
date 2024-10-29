@@ -86,10 +86,16 @@ Then, download and install the guest agent by running:
 curl -L https://lambdalabs-guest-agent.s3.us-west-2.amazonaws.com/scripts/install.sh | sudo bash
 ```
 
-You can confirm it's running by inspecting the systemd services:
+Run the following command to confirm that the guest agent is running:
 
-```text
-root@192-222-52-58:/home/ubuntu# systemctl status lambda-guest-agent*
+```bash
+sudo systemctl status lambda-guest-agent*
+```
+
+You should see output similar to the following, indicating that the guest agent
+is running:
+
+```{ .text .no-copy }
 ● lambda-guest-agent.service - Lambda metrics and observability agent
      Loaded: loaded (/etc/systemd/system/lambda-guest-agent.service; enabled; vendor preset: enabled)
      Active: active (running) since Mon 2024-10-28 20:58:44 UTC; 18s ago
