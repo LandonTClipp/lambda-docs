@@ -68,10 +68,10 @@ To install the guest agent on an on-demand instance:
 First, SSH into your instance by running:
 
 ```bash
-ssh ubuntu@IP-ADDRESS -L 3000:localhost:3000
+ssh ubuntu@<IP_ADDRESS> -L 3000:localhost:3000
 ```
 
-Replace `IP-ADDRESS` with the actual IP address of your instance.
+Replace `<IP_ADDRESS>` with the actual IP address of your instance.
 
 !!! note
 
@@ -142,9 +142,9 @@ To set up Prometheus and Grafana:
 
 1. Edit the `prometheus/prometheus.yml` file.
 
-    Under `targets`, change `localhost:9090` to `PRIVATE-IP-ADDRESS:9101`.
+    Under `targets`, change `localhost:9090` to `<PRIVATE_IP_ADDRESS>:9101`.
 
-    Replace `PRIVATE-IP-ADDRESS` with the private IP address of your instance,
+    Replace `<PRIVATE_IP_ADDRESS>` with the private IP address of your instance,
     which you obtained in the previous step.
 
     !!! note
