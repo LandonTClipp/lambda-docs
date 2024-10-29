@@ -236,6 +236,6 @@ systemctl disable lambda-guest-agent-updater.timer
 Furthermore, you may disable the guest-agent entirely by removing the guest-agent
 apt package. Upon removal, the package will stop disable all services:
 
-```
+```bash
 apt remove lambda-guest-agent
 ```
