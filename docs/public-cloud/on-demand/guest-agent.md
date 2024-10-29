@@ -201,7 +201,7 @@ To set up Prometheus and Grafana:
     ![Screenshot of how to import dashboard](../../assets/images/import-dashboard.png)
 
 1. In the **Import via dashboard JSON model** field, enter the
-   [example JSON model](https://gist.githubusercontent.com/LandonTClipp/964e90507d660e3fb710b4137be6cd6f/raw/bc7abd797da65581534513c153d1ad3d1b8e4bbe/lambda-guest-agent-grafana-model.json){ .external target="_blank" }{target="_blank"}
+   [example JSON model](https://gist.githubusercontent.com/LandonTClipp/964e90507d660e3fb710b4137be6cd6f/raw/bc7abd797da65581534513c153d1ad3d1b8e4bbe/lambda-guest-agent-grafana-model.json){ .external target="_blank" }
    prepared for this tutorial, then click **Load**. In the following screen,
    click **Import**.
 
