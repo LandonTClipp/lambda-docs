@@ -226,8 +226,8 @@ The guest-agent will automatically update itself on a two-week cadence. You may 
 updates by stopping and disabling the `lambda-guest-agent-updater.timer` systemd unit:
 
 ```
-systemctl stop lambda-guest-agent-updater.timer
-systemctl disable lambda-guest-agent-updater.timer
+sudo systemctl stop lambda-guest-agent-updater.timer
+sudo systemctl disable lambda-guest-agent-updater.timer
 ```
 
 ## Disablement
@@ -236,5 +236,5 @@ Furthermore, you may disable the guest-agent entirely by removing the guest-agen
 apt package. Upon removal, the package will stop disable all services:
 
 ```bash
-apt remove lambda-guest-agent
+sudo apt remove lambda-guest-agent
 ```
