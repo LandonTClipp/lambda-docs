@@ -60,7 +60,6 @@ In this tutorial, you'll install the guest agent and set up
 [Grafana](https://grafana.com/){ .external target="_blank" } with an example
 dashboard so you can visualize the collected metrics.
 
-
 ## Install the guest agent
 
 To install the guest agent on an on-demand instance:
@@ -160,7 +159,7 @@ To set up Prometheus and Grafana:
 
     In the `prometheus.yml` file, the `scrape_configs` key should look like:
 
-    ```{.yaml .no-copy}
+    ```{ .yaml .no-copy }
     scrape_configs:
     - job_name: prometheus
       honor_timestamps: true
