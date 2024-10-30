@@ -20,6 +20,8 @@
     --md-default-fg-color--lightest: #000000;
     --md-primary-fg-color: #825DFF;
     --md-typeset-color: #000000;
+    --md-mermaid-node-bg-color: var(--md-default-bg-color);
+    --md-mermaid-node-fg-color: var(--md-default-fg-color);
 
     .md-header__inner .md-logo img,
     .md-nav--primary .md-nav__title .md-logo img {
@@ -60,7 +62,6 @@
         background-color: #000000;
         color: #FFFFFF;
     }
-
 }
 
 [data-md-color-scheme="slate"] {
@@ -78,6 +79,8 @@
     --md-primary-fg-color: #825DFF;
     --md-typeset-color: #FFFFFF;
     --md-typeset-table-color: #ffffffb8;
+    --md-mermaid-node-bg-color: var(--md-default-bg-color);
+    --md-mermaid-node-fg-color: var(--md-default-fg-color);
 
     .md-header {
         background-color: hsla(var(--md-hue),15%,8%,1);
