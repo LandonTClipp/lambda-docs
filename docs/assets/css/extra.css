@@ -17,7 +17,7 @@
     --md-default-bg-color: #FFFFFF;
     --md-default-fg-color: #000000;
     --md-default-fg-color--light: #000000;
-    --md-default-fg-color--lightest: #ffffff00;
+    --md-default-fg-color--lightest: #000000;
     --md-primary-fg-color: #825DFF;
     --md-typeset-color: #000000;
 
@@ -74,7 +74,7 @@
     --md-default-bg-color: #000000;
     --md-default-fg-color: #FFFFFF;
     --md-default-fg-color--light: #FFFFFF;
-    --md-default-fg-color--lightest: #ffffff00;
+    --md-default-fg-color--lightest: #FFFFFF;
     --md-primary-fg-color: #825DFF;
     --md-typeset-color: #FFFFFF;
     --md-typeset-table-color: #ffffffb8;
