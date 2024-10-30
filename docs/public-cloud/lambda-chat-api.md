@@ -21,6 +21,11 @@ or
 
     Try [Lambda Chat](https://lambda.chat/chatui/){ .external target="_blank" }!
 
+    Contact us to learn more about our:
+
+    - [Public inference endpoints](https://lambdalabs.com/talk-to-an-engineer?primary_product_interest=Public+Inference+Endpoints){ .external target="_blank" }
+    - [Private inference endpoints](https://lambdalabs.com/talk-to-an-engineer?primary_product_interest=Private+Inference+Endpoints){ .external target="_blank" }
+
 Since the Lambda Chat Completions API is compatible with the
 [OpenAI API](https://platform.openai.com/docs/overview){ .external target="_blank" },
 you can use it as a drop-in replacement for applications currently using the
