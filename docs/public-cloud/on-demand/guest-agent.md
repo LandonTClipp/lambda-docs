@@ -53,6 +53,9 @@ flowchart LR
     end
     prometheus -->|Prom HTTP over TCP| MetricsForwarder
     FrontEnd -->|WIP: Front-End Visualizations| prometheus
+
+    style Hypervisor fill:#80808080;
+    style VM fill:#80808080;
 ```
 
 In this tutorial, you'll install the guest agent and set up
