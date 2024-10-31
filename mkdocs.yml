@@ -214,5 +214,4 @@ extra:
     - icon: fontawesome/brands/linkedin-in
       link: https://www.linkedin.com/company/lambda-labs
   analytics:
-    provider: google
-    property: G-43EZT1FM6Q
+    provider: custom
