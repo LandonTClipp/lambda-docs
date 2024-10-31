@@ -228,8 +228,9 @@ To set up Prometheus and Grafana:
 During the public beta release of guest-agent, the service exposes a Prometheus
 listener on `0.0.0.0:9101`. As mentioned before, this listener is a temporary
 measure to allow customers to gain access to metrics before they are available
-on lambdalabs.com. The sections below describe the implications of this listener
-for our public cloud products.
+on [lambdalabs.com](https://lambdalabs.com/){ .external target="_blank" }. The
+sections below describe the implications of this listener for our public cloud
+products.
 
 ### 1CC
 
@@ -259,7 +260,7 @@ and adding a rule that looks like this:
 Lambda takes your data privacy seriously. When you install guest-agent, we forward
 your metrics to our internal metrics infrastructure. Lambda does not store any
 personally identifying information in our metrics backend. The only customer-specific
-identifiers we store is a unique ID that will only be used to allow lambdalabs.com
+identifiers we store is a unique ID that will only be used to allow [lambdalabs.com](https://lambdalabs.com/){ .external target="_blank" }
 to gather your specific data once visualizations are available there. We do not store names,
 email addresses, street addresses, billing information, VM hostnames, or any other
 personally-identifying information on our metrics backend beyond what is
