@@ -243,7 +243,7 @@ access guest-agent metrics.
 ### On-Demand
 
 When installed on an on-demand node, guest-agent metrics can only be queried after
-exposing them either through an SSH tunnel (as descibed in [Install the guest agent](#install-the-guest-agent)),
+exposing them either through an SSH tunnel (as described in [Install the guest agent](#install-the-guest-agent)),
 or by opening up a hole in the Lambda firewall to accept connection requests to
 port 9101. It is _NOT_ recommended to open up the firewall, as guest-agent is not
 configured for TLS nor for any sort of authorization. Thus, an SSH tunnel is the
