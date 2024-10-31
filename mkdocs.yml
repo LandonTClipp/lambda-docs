@@ -35,12 +35,12 @@ nav:
     - public-cloud/teams.md
     - public-cloud/cloud-api.md
     - public-cloud/lambda-chat-api.md
+    - public-cloud/guest-agent.md
     - On-Demand:
       - public-cloud/on-demand/index.md
       - public-cloud/on-demand/getting-started.md
       - public-cloud/on-demand/dashboard.md
       - public-cloud/on-demand/billing.md
-      - public-cloud/on-demand/guest-agent.md
     - 1-Click Clusters:
       - public-cloud/1-click-clusters/index.md
       - public-cloud/1-click-clusters/serving-llama-3_1-405b.md
@@ -162,6 +162,7 @@ plugins:
   - social
   - redirects:
       redirect_maps:
+        'public-cloud/on-demand/guest-agent.md': 'public-cloud/guest-agent.md'
         'on-demand-cloud/getting-started.md': 'public-cloud/on-demand/getting-started.md'
         'on-demand-cloud/using-skypilot-to-deploy-a-kubernetes-cluster.md': 'education/scheduling-and-orchestration/skypilot-deploy-kubernetes.md'
         'on-demand-cloud/team.md': 'public-cloud/teams.md'
