@@ -223,6 +223,48 @@ To set up Prometheus and Grafana:
         [1-Click Clusters](../1-click-clusters/index.md), don't use InfiniBand
         fabric. Accordingly, the InfiniBand transfer rates will always be zero.
 
+## Security
+
+During the public beta release of guest-agent, the service exposes a Prometheus
+listener on `0.0.0.0:9101`. As mentioned before, this listener is a temporary
+measure to allow customers to gain access to metrics before they are available
+on lambdalabs.com. The sections below describe the implications of this listener
+for our public cloud products.
+
+### 1CC
+
+Compute nodes in 1-Click-Clusters are not capable of accepting connections from
+the public internet. Consequently, the `0.0.0.0:9101` listener can only be queried
+from your head nodes. When self-hosting Prometheus and Grafana, it's recommended
+to install them on one of your head nodes. This way, no tunnels are required to
+access guest-agent metrics.
+
+### On-Demand
+
+When installed on an on-demand node, guest-agent metrics can only be queried after
+exposing them either through an SSH tunnel (as descibed in [Install the guest agent](#install-the-guest-agent)),
+or by opening up a hole in the Lambda firewall to accept connection requests to
+port 9101. It is _NOT_ recommended to open up the firewall, as guest-agent is not
+configured for TLS nor for any sort of authorization. Thus, an SSH tunnel is the
+safest route as encryption and authorization can be done through the SSH protocol.
+
+If you decide that opening guest-agent to the firewall is acceptable, you can do
+so by selecting the `Firewall` tab in your [cloud dashboard](cloud.lambdalabs.com){ .external target="_blank" }
+and adding a rule that looks like this:
+
+![](/assets/images/guest-agent-firewall-rule.png)
+
+### Data Privacy
+
+Lambda takes your data privacy seriously. When you install guest-agent, we forward
+your metrics to our internal metrics infrastructure. Lambda does not store any
+personally identifying information in our metrics backend. The only customer-specific
+identifiers we store is a unique ID that will only be used to allow lambdalabs.com
+to gather your specific data once visualizations are available there. We do not store names,
+email addresses, street addresses, billing information, VM hostnames, or any other
+personally-identifying information on our metrics backend beyond what is
+necessary to serve your data to you.
+
 ## Updates
 
 The guest-agent will automatically update itself on a two-week cadence. You may disable
