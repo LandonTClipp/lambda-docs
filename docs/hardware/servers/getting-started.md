@@ -38,16 +38,20 @@ User manuals for Lambda server chassis can be downloaded below.
 
 | Chassis                     | User manual                                                                |
 | --------------------------- | -------------------------------------------------------------------------- |
-| SuperServer 420GP-TNR       | [Download](https://www.supermicro.com/manuals/superserver/4U/MNL-2389.pdf) |
-| AS -4124GO-NART             | [Download](https://www.supermicro.com/manuals/superserver/4U/MNL-2379.pdf) |
-| AS -1124US-TNRP             | [Download](https://www.supermicro.com/manuals/superserver/1U/MNL-2286.pdf) |
-| AS -1114CS-TNR              | [Download](https://www.supermicro.com/manuals/superserver/1U/MNL-2397.pdf) |
-| AS -2124GQ-NART             | [Download](https://www.supermicro.com/manuals/superserver/2U/MNL-2356.pdf) |
-| AS -4023S-TRT               | [Download](https://www.supermicro.com/manuals/superserver/4U/MNL-2037.pdf) |
-| SuperServer 4029GP-TRT2     | [Download](https://www.supermicro.com/manuals/superserver/4U/MNL-2107.pdf) |
-| SuperWorkstation 740GP-TNRT | [Download](https://www.supermicro.com/manuals/superserver/4U/MNL-2292.pdf) |
-| AS -2124US-TNRP             | [Download](https://www.supermicro.com/manuals/superserver/2U/MNL-2288.pdf) |
-| SuperServer 420GP-TNAR      | [Download](https://www.supermicro.com/manuals/superserver/4U/MNL-2350.pdf) |
+| SuperServer 420GP-TNR       | [:material-file-pdf-box: Download](https://www.supermicro.com/manuals/superserver/4U/MNL-2389.pdf){ target="_blank" } |
+| AS -4124GO-NART             | [:material-file-pdf-box: Download](https://www.supermicro.com/manuals/superserver/4U/MNL-2379.pdf){ target="_blank" } |
+| AS -1124US-TNRP             | [:material-file-pdf-box: Download](https://www.supermicro.com/manuals/superserver/1U/MNL-2286.pdf){ target="_blank" } |
+| AS -1114CS-TNR              | [:material-file-pdf-box: Download](https://www.supermicro.com/manuals/superserver/1U/MNL-2397.pdf){ target="_blank" } |
+| AS -2124GQ-NART             | [:material-file-pdf-box: Download](https://www.supermicro.com/manuals/superserver/2U/MNL-2356.pdf){ target="_blank" } |
+| AS -4023S-TRT               | [:material-file-pdf-box: Download](https://www.supermicro.com/manuals/superserver/4U/MNL-2037.pdf){ target="_blank" } |
+| SuperServer 4029GP-TRT2     | [:material-file-pdf-box: Download](https://www.supermicro.com/manuals/superserver/4U/MNL-2107.pdf){ target="_blank" } |
+| SuperWorkstation 740GP-TNRT | [:material-file-pdf-box: Download](https://www.supermicro.com/manuals/superserver/4U/MNL-2292.pdf){ target="_blank" } |
+| AS -2124US-TNRP             | [:material-file-pdf-box: Download](https://www.supermicro.com/manuals/superserver/2U/MNL-2288.pdf){ target="_blank" } |
+| SuperServer 420GP-TNAR      | [:material-file-pdf-box: Download](https://www.supermicro.com/manuals/superserver/4U/MNL-2350.pdf){ target="_blank" } |
+| SuperServer SYS-821GE-TNHR  | [:material-file-pdf-box: Download](https://www.supermicro.com/manuals/superserver/8U/MNL-2596.pdf){ target="_blank" } |
+| AS -8125GS-TNHR             | [:material-file-pdf-box: Download](https://www.supermicro.com/manuals/superserver/8U/MNL-2598.pdf){ target="_blank" } |
+| AS -4125GS-TNRT             | [:material-file-pdf-box: Download](https://www.supermicro.com/manuals/superserver/4U/MNL-2614.pdf){ target="_blank" } |
+| SuperServer SYS-421GE-TNRT  | [:material-file-pdf-box: Download](https://www.supermicro.com/manuals/superserver/4U/MNL-2593.pdf){ target="_blank" } |
 
 ### GIGABYTE
 
