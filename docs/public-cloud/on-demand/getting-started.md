@@ -276,8 +276,7 @@ Multi-GPU instances usually take 10-15 minutes to launch.
 
 !!! note
 
-    [Jupyter Notebook](#how-do-i-open-jupyter-notebook-on-my-instance) and
-    [Demos](#) can take a few minutes after an instance launches to become
+    [Jupyter Notebook](#how-do-i-open-jupyter-notebook-on-my-instance) can take a few minutes after an instance launches to become
     accessible.
 
 !!! note

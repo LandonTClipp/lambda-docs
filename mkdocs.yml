@@ -172,7 +172,6 @@ plugins:
         'on-demand-cloud/firewall.md': 'public-cloud/firewalls.md'
         'on-demand-cloud/cloud-api.md': 'public-cloud/cloud-api.md'
         'on-demand-cloud/overview.md': 'public-cloud/on-demand/index.md'
-        'on-demand-cloud/demos.md': 'public-cloud/on-demand/demos.md'
         'on-demand-cloud/tutorial-getting-started-with-training-a-machine-learning-model.md': 'education/tutorial-getting-started-with-training-a-machine-learning-model.md'
         'on-demand-cloud/deploying-a-llama-3-inference-endpoint.md': 'education/large-language-models/deploying-a-llama-3-inference-endpoint.md'
         'on-demand-cloud/using-the-lambda-chat-completions-api.md': 'public-cloud/lambda-chat-api.md'
