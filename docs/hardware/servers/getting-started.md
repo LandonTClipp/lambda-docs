@@ -132,14 +132,14 @@ The power requirements for Lambda server power supply units (PSUs) are as follow
 \
 Power connector inlets and outlets
 
-This is what **C14 inlets** and **C13 outlets** look like:
+This is what **C13 outlets** and **C14 inlets** look like:
 
 <figure markdown="span">
   ![Image of C13 outlet and C14 inlet](../../assets/images/C13_C14.png)
   <figcaption>C13 outlet and C14 inlet</figcaption>
 </figure>
 
-This is what **C20 inlets** and **C19 outlets** look like:
+This is what **C19 outlets** and **C20 inlets** look like:
 
 <figure markdown="span">
   ![Image of C19 outlet and C20 inlet](../../assets/images/C19_C20.png)
