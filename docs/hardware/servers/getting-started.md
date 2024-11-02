@@ -129,9 +129,6 @@ The power requirements for Lambda server power supply units (PSUs) are as follow
 |              |              | 3000    | 207.1-240    | 16-14.5     | 60/50          |              |                          |
 | Supermicro   | PWS-3K06G-2R | 3000    | 207.1-240    | 16-14.5     | 60/50          | C20/C19      |                          |
 
-\
-Power connector inlets and outlets
-
 This is what **C13 outlets** and **C14 inlets** look like:
 
 <figure markdown="span">
