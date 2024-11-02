@@ -55,14 +55,14 @@ User manuals for Lambda server chassis can be downloaded below.
 
 ### GIGABYTE
 
-| Chassis  | User manual                                                                                                 |
-| -------- | ----------------------------------------------------------------------------------------------------------- |
-| R152-Z33 | [Download](https://download.gigabyte.com/FileList/Manual/server\_manual\_R152-Z33\_e\_10.pdf)               |
-| G292-Z43 | [Download](https://download.gigabyte.com/FileList/Manual/server\_system\_manual\_G292-Z43\_e\_v10.pdf)      |
-| G292-Z24 | [Download](https://download.gigabyte.com/FileList/Manual/server\_system\_manual\_G292-Z24\_e\_A00.pdf)      |
-| G292-Z22 | [Download](https://download.gigabyte.com/FileList/Manual/server\_system\_manual\_g292-z20\_z22\_e\_1.0.pdf) |
-| G292-Z42 | [Download](https://download.gigabyte.com/FileList/Manual/server\_system\_manual\_g292-z40\_z42\_e\_1.0.pdf) |
-| G292-280 | [Download](https://download.gigabyte.com/FileList/Manual/server\_manual\_G292-280\_e\_10.pdf)               |
+| Chassis  | User manual                                                                                                                                            |
+| -------- | -------------------------------------------------------------------------------------------------------------------------------------------------------|
+| R152-Z33 | [:material-file-pdf-box: Download](https://download.gigabyte.com/FileList/Manual/server\_manual\_R152-Z33\_e\_10.pdf){ target="_blank" }               |
+| G292-Z43 | [:material-file-pdf-box: Download](https://download.gigabyte.com/FileList/Manual/server\_system\_manual\_G292-Z43\_e\_v10.pdf){ target="_blank" }      |
+| G292-Z24 | [:material-file-pdf-box: Download](https://download.gigabyte.com/FileList/Manual/server\_system\_manual\_G292-Z24\_e\_A00.pdf){ target="_blank" }      |
+| G292-Z22 | [:material-file-pdf-box: Download](https://download.gigabyte.com/FileList/Manual/server\_system\_manual\_g292-z20\_z22\_e\_1.0.pdf){ target="_blank" } |
+| G292-Z42 | [:material-file-pdf-box: Download](https://download.gigabyte.com/FileList/Manual/server\_system\_manual\_g292-z40\_z42\_e\_1.0.pdf){ target="_blank" } |
+| G292-280 | [:material-file-pdf-box: Download](https://download.gigabyte.com/FileList/Manual/server\_manual\_G292-280\_e\_10.pdf){ target="_blank" }               |
 
 ## Where do I find my server's serial number?
 
@@ -101,7 +101,9 @@ On Supermicro chassis, the IPMI password appears on one or more of the following
 * A sticker near the motherboard serial number label.
 * The service tag.
 
-See Supermicro's [BMC Unique Password Guide \[PDF\]](https://www.supermicro.com/support/BMC\_Unique\_Password\_Guide.pdf) for more information.
+See Supermicro's
+[:material-file-pdf-box: BMC Unique Password Guide](https://www.supermicro.com/support/BMC\_Unique\_Password\_Guide.pdf){ target="_blank" }
+for more information.
 
 ### GIGABYTE
 
@@ -110,7 +112,9 @@ On GIGABYTE chassis, the IPMI password appears on one or more of the following:
 * A sticker affixed to the motherboard.
 * The chassis itself.
 
-See GIGABYTE's [BMC Unique Pre-Programmed Password Reference Guide \[PDF\]](https://www.gigabyte.com/Fileupload/Global/Multimedia/101/file/573/1015.pdf) for more information.
+See GIGABYTE's
+[:material-file-pdf-box: BMC Unique Pre-Programmed Password Reference Guide](https://www.gigabyte.com/Fileupload/Global/Multimedia/101/file/573/1015.pdf){ target="_blank" }
+for more information.
 
 ## What are the power requirements for my server's PSUs?
 
