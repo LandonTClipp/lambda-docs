@@ -135,13 +135,13 @@ Power connector inlets and outlets
 This is what **C14 inlets** and **C13 outlets** look like:
 
 <figure markdown="span">
-  ![Supermicro server serial number](../../assets/images/power-cord-c13-c14.png)
-  <figcaption>Power cord with C14 and C13 connectors</figcaption>
+  ![Image of C13 outlet and C14 inlet](../../assets/images/C13_C14.png)
+  <figcaption>C13 outlet and C14 inlet</figcaption>
 </figure>
 
 This is what **C20 inlets** and **C19 outlets** look like:
 
 <figure markdown="span">
-  ![Supermicro server serial number](../../assets/images/power-cord-c19-c20.png)
-  <figcaption>Power cord with C20 and C19 connectors</figcaption>
+  ![Image of C19 outlet and C20 inlet](../../assets/images/C19_C20.png)
+  <figcaption>C19 outlet and C20 inlet</figcaption>
 </figure>
