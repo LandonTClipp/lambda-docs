@@ -200,7 +200,7 @@ To set up Prometheus and Grafana:
 1. At the top-right of the dashboard, click the **+**. Then, choose **Import
    dashboard**.
 
-    ![Screenshot of how to import dashboard](../../assets/images/import-dashboard.png)
+    ![Screenshot of how to import dashboard](../assets/images/import-dashboard.png)
 
 1. In the **Import via dashboard JSON model** field, enter the
    [example JSON model](https://gist.githubusercontent.com/LandonTClipp/964e90507d660e3fb710b4137be6cd6f/raw/bc7abd797da65581534513c153d1ad3d1b8e4bbe/lambda-guest-agent-grafana-model.json){ .external target="_blank" }
@@ -215,12 +215,12 @@ To set up Prometheus and Grafana:
     - InfiniBand transfer rates
     - local storage transfer rates
 
-    ![Screenshot of an example Grafana dashboard](../../assets/images/grafana-dashboard-guest-agent.png)
+    ![Screenshot of an example Grafana dashboard](../assets/images/grafana-dashboard-guest-agent.png)
 
     !!! note
 
         On-demand instances, unlike
-        [1-Click Clusters](../1-click-clusters/index.md), don't use InfiniBand
+        [1-Click Clusters](1-click-clusters/index.md), don't use InfiniBand
         fabric. Accordingly, the InfiniBand transfer rates will always be zero.
 
 ## Security
@@ -253,7 +253,7 @@ If you decide that opening guest-agent to the firewall is acceptable, you can do
 so by selecting the `Firewall` tab in your [cloud dashboard](cloud.lambdalabs.com){ .external target="_blank" }
 and adding a rule that looks like this:
 
-![](/assets/images/guest-agent-firewall-rule.png)
+![](../assets/images/guest-agent-firewall-rule.png)
 
 ### Data Privacy
 
