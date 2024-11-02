@@ -250,7 +250,7 @@ configured for TLS nor for any sort of authorization. Thus, an SSH tunnel is the
 safest route as encryption and authorization can be done through the SSH protocol.
 
 If you decide that opening guest-agent to the firewall is acceptable, you can do
-so by selecting the `Firewall` tab in your [cloud dashboard](cloud.lambdalabs.com){ .external target="_blank" }
+so by selecting the `Firewall` tab in your [cloud dashboard](https://cloud.lambdalabs.com){ .external target="_blank" }
 and adding a rule that looks like this:
 
 ![](../assets/images/guest-agent-firewall-rule.png)
