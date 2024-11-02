@@ -181,7 +181,6 @@ plugins:
         'on-demand-cloud/how-to-serve-the-llama-3.1-8b-and-70b-models-using-lambda-cloud-on-demand-instances.md': 'education/large-language-models/serving-llama-3-1-docker.md'
         'on-demand-cloud/deploying-models-with-dstack.md': 'education/scheduling-and-orchestration/deploying-models-with-dstack.md'
         'on-demand-cloud/file-systems.md': 'public-cloud/filesystems.md'
-        'tensorbook/getting-started.md': 'hardware/tensorbook/getting-started.md'
         'workstations/troubleshooting-workstations-and-desktops.md': 'hardware/workstations/troubleshooting.md'
         'workstations/getting-started.md': 'hardware/workstations/getting-started.md'
         'software/virtual-environments-and-docker-containers.md': 'education/programming/virtual-environments-containers.md'
