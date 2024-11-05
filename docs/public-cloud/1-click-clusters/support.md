@@ -14,8 +14,8 @@ At Lambda, we recognize that exceptional support is critical to maximizing the v
 When you choose Lambda, you gain access to a dedicated support team of seasoned professionals with deep expertise in AI/ML infrastructure. This team includes:
 
 * **Customer Success Manager (CSM)**: Your main point of contact post-sales, responsible for ensuring the delivery of your solution and your overall satisfaction.
-* **Technical Account Manager(TAM)**: An expert specialist who understands the specifics of your deployment, provides ongoing technical guidance, and escalates any complex issues. 
-* **Machine Learning Expert (MLE)**: An AI/ML expert within Lambda will provide guidance on how to integrate and scale AI workloads.    
+* **Technical Account Manager(TAM)**: An expert specialist who understands the specifics of your deployment, provides ongoing technical guidance, and escalates any complex issues.
+* **Machine Learning Expert (MLE)**: An AI/ML expert within Lambda will provide guidance on how to integrate and scale AI workloads.
 * **Support Engineering**: Lambda’s Support team, available 24/7 through our ticketing portal, is well-versed in 1CC and will be able to respond to any technical support request, escalating issues and incidents early and often.
 
 ## Support scope
@@ -28,10 +28,10 @@ Lambda classifies incoming support tickets into three categories:
 
 ### In scope
 
-* **Hardware and Infrastructure:** Full support for CPU/GPU VMs, physical hosts, and networking components.  
-* **Software Environment:** Assistance with Lambda Stack, OFED drivers, Jupyter Notebooks, and essential ML tools like NCCL and Open MPI.  
-* **Networking and Storage:** Management and troubleshooting for Ethernet and InfiniBand networks, as well as persistent and local storage.  
-* **Slurm Installation:** Guidance on Slurm setup and basic troubleshooting to streamline your job scheduling processes.  
+* **Hardware and Infrastructure:** Full support for CPU/GPU VMs, physical hosts, and networking components.
+* **Software Environment:** Assistance with Lambda Stack, OFED drivers, JupyterLab, and essential ML tools like NCCL and Open MPI.
+* **Networking and Storage:** Management and troubleshooting for Ethernet and InfiniBand networks, as well as persistent and local storage.
+* **Slurm Installation:** Guidance on Slurm setup and basic troubleshooting to streamline your job scheduling processes.
 * **Managed Kubernetes*:** If purchased as an add-on, our team of Kubernetes experts will be there to help you.
 
 ### Best effort
@@ -44,8 +44,8 @@ In these exceptional cases, we ensure our customers understand that while we str
 
 Some support requests cannot be supported, such as:
 
-* Troubleshooting customer code  
-* 3rd party applications/software installed after cluster handoff  
+* Troubleshooting customer code
+* 3rd party applications/software installed after cluster handoff
 * Network/VPN connections to your cluster
 
 # SLA
