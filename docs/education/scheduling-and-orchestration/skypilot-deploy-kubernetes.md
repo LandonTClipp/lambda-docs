@@ -130,7 +130,7 @@ passphrase.
     This command will generate a random string of characters such as
     `zPUlZGe4HRcy+Om04RvGmQ==`.
 
-The top of the `deploy_k8s.yaml` file should look similar to:
+The top of the `cloud_k8s.yaml` file should look similar to:
 
 ```yaml
 resources:
