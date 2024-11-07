@@ -213,29 +213,18 @@ This script will deploy a Kubernetes cluster on the cloud and GPUs specified in 
 
 + CLUSTER_NAME=k8s
 + sky launch -y -c k8s cloud_k8s.yaml
-SkyPilot collects usage data to improve its services. `setup` and `run` commands are not collected to ensure privacy.
-Usage logging can be disabled by setting the environment variable SKYPILOT_DISABLE_USAGE_COLLECTION=1.
 Task from YAML spec: cloud_k8s.yaml
-I 09-11 16:10:04 optimizer.py:719] == Optimizer ==
-I 09-11 16:10:04 optimizer.py:730] Target: minimizing cost
-I 09-11 16:10:04 optimizer.py:742] Estimated cost: $1.5 / hour
-I 09-11 16:10:04 optimizer.py:742]
-I 09-11 16:10:04 optimizer.py:867] Considered resources (2 nodes):
-I 09-11 16:10:04 optimizer.py:937] ------------------------------------------------------------------------------------------
-I 09-11 16:10:04 optimizer.py:937]  CLOUD    INSTANCE     vCPUs   Mem(GB)   ACCELERATORS   REGION/ZONE   COST ($)   CHOSEN
-I 09-11 16:10:04 optimizer.py:937] ------------------------------------------------------------------------------------------
-I 09-11 16:10:04 optimizer.py:937]  Lambda   gpu_1x_a10   30      200       A10:1          us-east-1     1.50          ✔
-I 09-11 16:10:04 optimizer.py:937] ------------------------------------------------------------------------------------------
-I 09-11 16:10:04 optimizer.py:937]
+Considered resources (2 nodes):
+------------------------------------------------------------------------------------------------
+ CLOUD    INSTANCE           vCPUs   Mem(GB)   ACCELERATORS   REGION/ZONE   COST ($)   CHOSEN
+------------------------------------------------------------------------------------------------
+ Lambda   gpu_1x_h100_pcie   26      200       H100:1         us-east-1     4.98          ✔
+------------------------------------------------------------------------------------------------
+Multiple Lambda instances satisfy H100:1. The cheapest Lambda(gpu_1x_h100_pcie, {'H100': 1}) is considered among:
+['gpu_1x_h100_pcie', 'gpu_1x_h100_sxm5'].
+To list more details, run: sky show-gpus H100
+
 Running task on cluster k8s...
-I 09-11 16:10:04 cloud_vm_ray_backend.py:4397] Creating a new cluster: 'k8s' [2x Lambda(gpu_1x_a10, {'A10': 1})].
-I 09-11 16:10:04 cloud_vm_ray_backend.py:4397] Tip: to reuse an existing cluster, specify --cluster (-c). Run `sky status` to see existing clusters.
-I 09-11 16:10:05 cloud_vm_ray_backend.py:1314] To view detailed progress: tail -n100 -f /home/lambda/sky_logs/sky-2024-09-11-16-10-03-504822/provision.log
-I 09-11 16:10:06 cloud_vm_ray_backend.py:1721] Launching on Lambda us-east-1
-I 09-11 16:13:24 log_utils.py:45] Head node is up.
-I 09-11 16:14:10 cloud_vm_ray_backend.py:1826] Successfully provisioned or found existing head instance. Waiting for workers.
-I 09-11 16:18:13 cloud_vm_ray_backend.py:1569] Successfully provisioned or found existing VMs.
-I 09-11 16:18:17 cloud_vm_ray_backend.py:3319] Job submitted with Job ID: 1
 ```
 
 It usually takes about 15 minutes for the Kubernetes cluster to be deployed.
@@ -245,7 +234,6 @@ The Kubernetes cluster is successfully deployed once you see:
 ```{.text .no-copy}
 Checking credentials to enable clouds for SkyPilot.
   Kubernetes: enabled
-    Hint: Could not detect GPU labels in Kubernetes cluster. If this cluster has GPUs, please ensure GPU nodes have node labels of either of these formats: skypilot.co/accelerator, cloud.google.com/gke-accelerator, karpenter.k8s.aws/instance-gpu-name, nvidia.com/gpu.product, gpu.nvidia.com/class. Please refer to the documentation on how to set up node labels.
 
 To enable a cloud, follow the hints above and rerun: sky check
 If any problems remain, refer to detailed docs at: https://skypilot.readthedocs.io/en/latest/getting-started/installation.html
@@ -275,17 +263,13 @@ proceed:
 ```{.text .no-copy}
 Task from command: nvidia-smi
 Managed job 'sky-cmd' will be launched on (estimated):
-I 09-07 16:26:18 optimizer.py:718] == Optimizer ==
-I 09-07 16:26:18 optimizer.py:741] Estimated cost: $0.0 / hour
-I 09-07 16:26:18 optimizer.py:741]
-I 09-07 16:26:18 optimizer.py:866] Considered resources (1 node):
-I 09-07 16:26:18 optimizer.py:936] ---------------------------------------------------------------------------------------------------
-I 09-07 16:26:18 optimizer.py:936]  CLOUD        INSTANCE          vCPUs   Mem(GB)   ACCELERATORS   REGION/ZONE   COST ($)   CHOSEN
-I 09-07 16:26:18 optimizer.py:936] ---------------------------------------------------------------------------------------------------
-I 09-07 16:26:18 optimizer.py:936]  Kubernetes   2CPU--8GB--1A10   2       8         A10:1          kubernetes    0.00          ✔
-I 09-07 16:26:18 optimizer.py:936] ---------------------------------------------------------------------------------------------------
-I 09-07 16:26:18 optimizer.py:936]
-Launching a managed job 'sky-cmd'. Proceed? [Y/n]:
+Considered resources (1 node):
+----------------------------------------------------------------------------------------------------
+ CLOUD        INSTANCE           vCPUs   Mem(GB)   ACCELERATORS   REGION/ZONE   COST ($)   CHOSEN
+----------------------------------------------------------------------------------------------------
+ Kubernetes   2CPU--8GB--1H100   2       8         H100:1         default       0.00          ✔
+----------------------------------------------------------------------------------------------------
+Launching a managed job 'sky-cmd'. Proceed? [Y/n]: y
 ```
 
 Press ++enter++ to proceed.
@@ -295,63 +279,53 @@ successfully:
 
 ```{.text .no-copy}
 Launching managed job 'sky-cmd' from jobs controller...
-Launching jobs controller...
-I 09-07 16:26:25 optimizer.py:718] == Optimizer ==
-I 09-07 16:26:25 optimizer.py:741] Estimated cost: $0.0 / hour
-I 09-07 16:26:25 optimizer.py:741]
-I 09-07 16:26:25 optimizer.py:866] Considered resources (1 node):
-I 09-07 16:26:25 optimizer.py:936] ----------------------------------------------------------------------------------------------
-I 09-07 16:26:25 optimizer.py:936]  CLOUD        INSTANCE     vCPUs   Mem(GB)   ACCELERATORS   REGION/ZONE   COST ($)   CHOSEN
-I 09-07 16:26:25 optimizer.py:936] ----------------------------------------------------------------------------------------------
-I 09-07 16:26:25 optimizer.py:936]  Kubernetes   8CPU--24GB   8       24        -              kubernetes    0.00          ✔
-I 09-07 16:26:25 optimizer.py:936] ----------------------------------------------------------------------------------------------
-I 09-07 16:26:25 optimizer.py:936]
-I 09-07 16:26:25 cloud_vm_ray_backend.py:4354] Creating a new cluster: 'sky-jobs-controller-0b36a124' [1x Kubernetes(8CPU--24GB, cpus=8+, mem=3x, disk_size=50)].
-I 09-07 16:26:25 cloud_vm_ray_backend.py:4354] Tip: to reuse an existing cluster, specify --cluster (-c). Run `sky status` to see existing clusters.
-I 09-07 16:26:25 cloud_vm_ray_backend.py:1314] To view detailed progress: tail -n100 -f /home/c/sky_logs/sky-2024-09-07-16-26-24-870809/provision.log
-I 09-07 16:26:25 common.py:228] Updated Kubernetes catalog.
-I 09-07 16:26:25 provisioner.py:62] Launching on Kubernetes 'sky-jobs-controller-0b36a124'.
-I 09-07 16:26:47 provisioner.py:450] Successfully provisioned or found existing instance.
-I 09-07 16:27:10 provisioner.py:552] Successfully provisioned cluster: sky-jobs-controller-0b36a124
-I 09-07 16:27:10 cloud_vm_ray_backend.py:4383] Processing file mounts.
-I 09-07 16:27:10 cloud_vm_ray_backend.py:4409] To view detailed progress: tail -n100 -f ~/sky_logs/sky-2024-09-07-16-26-24-870809/file_mounts.log
-I 09-07 16:27:10 backend_utils.py:1336] Syncing (to 1 node): /tmp/managed-dag-sky-cmd-0gu861ix -> ~/.sky/managed_jobs/sky-cmd-1b6c.yaml
-I 09-07 16:27:13 cloud_vm_ray_backend.py:3176] Running setup on 1 node.
-Check & install cloud dependencies on controller: Done for 1 clouds.
-I 09-07 16:27:16 cloud_vm_ray_backend.py:3189] Setup completed.
-I 09-07 16:27:16 cloud_vm_ray_backend.py:4109] Auto-stop is not supported for Kubernetes and RunPod clusters. Skipping.
-I 09-07 16:27:20 cloud_vm_ray_backend.py:3276] Job submitted with Job ID: 1
-I 09-07 23:28:46 log_lib.py:412] Start streaming logs for managed job 1.
-INFO: Tip: use Ctrl-C to exit log streaming (task will not be killed).
-INFO: Waiting for task resources on 1 node. This will block if the cluster is full.
-INFO: All task resources reserved.
-INFO: Reserved IPs: ['10.42.1.16']
-(sky-cmd, pid=1504) Sat Sep  7 23:28:31 2024
-(sky-cmd, pid=1504) +---------------------------------------------------------------------------------------+
-(sky-cmd, pid=1504) | NVIDIA-SMI 535.129.03             Driver Version: 535.129.03   CUDA Version: 12.2     |
-(sky-cmd, pid=1504) |-----------------------------------------+----------------------+----------------------+
-(sky-cmd, pid=1504) | GPU  Name                 Persistence-M | Bus-Id        Disp.A | Volatile Uncorr. ECC |
-(sky-cmd, pid=1504) | Fan  Temp   Perf          Pwr:Usage/Cap |         Memory-Usage | GPU-Util  Compute M. |
-(sky-cmd, pid=1504) |                                         |                      |               MIG M. |
-(sky-cmd, pid=1504) |=========================================+======================+======================|
-(sky-cmd, pid=1504) |   0  NVIDIA A10                     On  | 00000000:07:00.0 Off |                    0 |
-(sky-cmd, pid=1504) |  0%   30C    P8              22W / 150W |      4MiB / 23028MiB |      0%      Default |
-(sky-cmd, pid=1504) |                                         |                      |                  N/A |
-(sky-cmd, pid=1504) +-----------------------------------------+----------------------+----------------------+
-(sky-cmd, pid=1504)
-(sky-cmd, pid=1504) +---------------------------------------------------------------------------------------+
-(sky-cmd, pid=1504) | Processes:                                                                            |
-(sky-cmd, pid=1504) |  GPU   GI   CI        PID   Type   Process name                            GPU Memory |
-(sky-cmd, pid=1504) |        ID   ID                                                             Usage      |
-(sky-cmd, pid=1504) |=======================================================================================|
-(sky-cmd, pid=1504) |  No running processes found                                                           |
-(sky-cmd, pid=1504) +---------------------------------------------------------------------------------------+
-I 09-07 23:28:54 utils.py:447] Logs finished for job 1 (status: SUCCEEDED).
+Considered resources (1 node):
+----------------------------------------------------------------------------------------------
+ CLOUD        INSTANCE     vCPUs   Mem(GB)   ACCELERATORS   REGION/ZONE   COST ($)   CHOSEN
+----------------------------------------------------------------------------------------------
+ Kubernetes   8CPU--24GB   8       24        -              default       0.00          ✔
+----------------------------------------------------------------------------------------------
+⚙︎ Launching managed jobs controller on Kubernetes.
+└── Pod is up.
+✓ Cluster launched: sky-jobs-controller-4b0a835a.  View logs at: ~/sky_logs/sky-2024-11-07-08-48-26-378180/provision.log
+⚙︎ Mounting files.
+  Syncing (to 1 node): /tmp/managed-dag-sky-cmd-nza5s28e -> ~/.sky/managed_jobs/sky-cmd-4bfa.yaml
+✓ Files synced.  View logs at: ~/sky_logs/sky-2024-11-07-08-48-26-378180/file_mounts.log
+⚙︎ Running setup on managed jobs controller.
+  Check & install cloud dependencies on controller: done.
+✓ Setup completed.  View logs at: ~/sky_logs/sky-2024-11-07-08-48-26-378180/setup-*.log
+Auto-stop is not supported for Kubernetes and RunPod clusters. Skipping.
+⚙︎ Job submitted, ID: 1
+├── Waiting for task resources on 1 node.
+└── Job started. Streaming logs... (Ctrl-C to exit log streaming; job will not be killed)
+(sky-cmd, pid=1362) Thu Nov  7 16:52:15 2024
+(sky-cmd, pid=1362) +-----------------------------------------------------------------------------------------+
+(sky-cmd, pid=1362) | NVIDIA-SMI 550.90.12              Driver Version: 550.90.12      CUDA Version: 12.4     |
+(sky-cmd, pid=1362) |-----------------------------------------+------------------------+----------------------+
+(sky-cmd, pid=1362) | GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+(sky-cmd, pid=1362) | Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+(sky-cmd, pid=1362) |                                         |                        |               MIG M. |
+(sky-cmd, pid=1362) |=========================================+========================+======================|
+(sky-cmd, pid=1362) |   0  NVIDIA H100 PCIe               On  |   00000000:08:00.0 Off |                    0 |
+(sky-cmd, pid=1362) | N/A   32C    P0             49W /  350W |       1MiB /  81559MiB |      0%      Default |
+(sky-cmd, pid=1362) |                                         |                        |             Disabled |
+(sky-cmd, pid=1362) +-----------------------------------------+------------------------+----------------------+
+(sky-cmd, pid=1362)
+(sky-cmd, pid=1362) +-----------------------------------------------------------------------------------------+
+(sky-cmd, pid=1362) | Processes:                                                                              |
+(sky-cmd, pid=1362) |  GPU   GI   CI        PID   Type   Process name                              GPU Memory |
+(sky-cmd, pid=1362) |        ID   ID                                                               Usage      |
+(sky-cmd, pid=1362) |=========================================================================================|
+(sky-cmd, pid=1362) |  No running processes found                                                             |
+(sky-cmd, pid=1362) +-----------------------------------------------------------------------------------------+
+✓ Managed job finished: 1 (status: SUCCEEDED).
 
-I 09-07 16:28:54 cloud_vm_ray_backend.py:3292] Managed Job ID: 1
-I 09-07 16:28:54 cloud_vm_ray_backend.py:3292] To cancel the job:		sky jobs cancel 1
-I 09-07 16:28:54 cloud_vm_ray_backend.py:3292] To stream job logs:		sky jobs logs 1
-I 09-07 16:28:54 cloud_vm_ray_backend.py:3292] To stream controller logs:	sky jobs logs --controller 1
-I 09-07 16:28:54 cloud_vm_ray_backend.py:3292] To view all managed jobs:	sky jobs queue
-I 09-07 16:28:54 cloud_vm_ray_backend.py:3292] To view managed job dashboard:	sky jobs dashboard
+
+📋 Useful Commands
+Managed Job ID: 1
+├── To cancel the job:              sky jobs cancel 1
+├── To stream job logs:             sky jobs logs 1
+├── To stream controller logs:      sky jobs logs --controller 1
+├── To view all managed jobs:       sky jobs queue
+└── To view managed job dashboard:  sky jobs dashboard
 ```
