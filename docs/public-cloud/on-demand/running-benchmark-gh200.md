@@ -291,5 +291,8 @@ unnecessary costs:
 
 ## Next steps
 
-For more tips and tutorials, see our
-[Education](../../education/index.md) section.
+-  To learn how to use Hugging Face's Diffusers and Transformers libraries on
+    a GH200 instance, see
+    [Running Hugging Face Transformers and Diffusers on an NVIDIA GH200 instance](running-huggingface-diffusers-transformers-gh200.md).
+-  For more tips and tutorials, see our
+    [Education](../../education/index.md) section.
