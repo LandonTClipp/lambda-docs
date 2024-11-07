@@ -51,11 +51,12 @@ This tutorial assumes you already have installed:
 - `curl`
 - `netcat`
 - `socat`
+- `git`
 
 You can install these packages by running:
 
 ```bash
-sudo apt update && sudo apt install -y python3 python3-venv python3-pip curl netcat socat
+sudo apt update && sudo apt install -y python3 python3-venv python3-pip curl netcat socat git
 ```
 
 You also need to install
@@ -90,10 +91,24 @@ Create and activate a Python virtual environment for this tutorial by running:
 python3 -m venv ~/skypilot-tutorial/.venv && source ~/skypilot-tutorial/.venv/bin/activate
 ```
 
+Clone the SkyPilot GitHub repository to your computer, then change into the
+repository, by running:
+
+```bash
+git clone -b ray-min-worker-port --single-branch https://github.com/cbrownstein-lambda/skypilot.git && \
+cd skypilot
+```
+
 Then, install SkyPilot in your virtual environment by running:
 
 ```bash
-pip3 install "skypilot-nightly[lambda,kubernetes]"
+pip3 install -e ".[lambda,kubernetes]"
+```
+
+Change back into the `~/skypilot-tutorial` directory by running:
+
+```bash
+cd ~/skypilot-tutorial
 ```
 
 ## Configure SkyPilot for Lambda Public Cloud
