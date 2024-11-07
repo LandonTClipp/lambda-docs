@@ -43,6 +43,7 @@ nav:
       - public-cloud/on-demand/billing.md
       - public-cloud/on-demand/running-benchmark-gh200.md
       - public-cloud/on-demand/running-huggingface-diffusers-transformers-gh200.md
+      - public-cloud/on-demand/serving-llama-31-vllm-gh200.md
     - 1-Click Clusters:
       - public-cloud/1-click-clusters/index.md
       - public-cloud/1-click-clusters/serving-llama-3_1-405b.md

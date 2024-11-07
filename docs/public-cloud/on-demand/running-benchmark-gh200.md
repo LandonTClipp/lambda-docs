@@ -291,6 +291,8 @@ unnecessary costs:
 
 ## Next steps
 
+-  To learn how to use vLLM to serve models from a GH200 instance, see
+    [Serving Llama 3.1 8B using vLLM on an NVIDIA GH200 instance](serving-llama-31-vllm-gh200.md).
 -  To learn how to use Hugging Face's Diffusers and Transformers libraries on
     a GH200 instance, see
     [Running Hugging Face Transformers and Diffusers on an NVIDIA GH200 instance](running-huggingface-diffusers-transformers-gh200.md).
