@@ -32,7 +32,7 @@ In this tutorial, you'll:
 - [Install SkyPilot](#install-skypilot).
 - [Configure SkyPilot for Lambda Public
   Cloud](#configure-skypilot-for-lambda-public-cloud).
-- [Use SkyPilot to launch 2 1x A10 on-demand instances and deploy a 2-node
+- [Use SkyPilot to launch 2 1x H100 on-demand instances and deploy a 2-node
   Kubernetes cluster using these
   instances](#use-skypilot-to-launch-instances-and-deploy-kubernetes).
 
@@ -111,8 +111,10 @@ curl -LO https://raw.githubusercontent.com/skypilot-org/skypilot/master/examples
 
 Edit the `cloud_k8s.yaml` file.
 
-At the top of the file, for`SKY_K3S_TOKEN`, replace **mytoken** with a strong
-passphrase.
+At the top of the file:
+
+- Set `accelerators` to `H100:1`.
+- For`SKY_K3S_TOKEN`, replace **mytoken** with a strong passphrase.
 
 !!! warning
 
@@ -135,7 +137,7 @@ The top of the `cloud_k8s.yaml` file should look similar to:
 ```yaml
 resources:
   cloud: lambda
-  accelerators: A10:1
+  accelerators: H100:1
 #  Uncomment the following line to expose ports on a different cloud
 #  ports: 6443
 
@@ -181,7 +183,7 @@ Change into the directory you created for this tutorial by running:
 cd ~/skypilot-tutorial
 ```
 
-Then, launch 2 1x A10 instances and deploy a 2-node Kubernetes cluster using
+Then, launch 2 1x H100 instances and deploy a 2-node Kubernetes cluster using
 those instances by running:
 
 ```bash
@@ -249,7 +251,7 @@ To test the Kubernetes cluster, launch a [job
 by running:
 
 ```bash
-sky jobs launch --gpus A10 --cloud kubernetes -- 'nvidia-smi'
+sky jobs launch --gpus H100 --cloud kubernetes -- 'nvidia-smi'
 ```
 
 You'll see output similar to the following and will be asked if you want to
