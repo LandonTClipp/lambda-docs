@@ -230,4 +230,6 @@ suspend-then-hibernate.target sleep.target suspend.target
 
 ## Next steps
 
-New to ODC? Check out the [ODC Overview](index.md).
+-  New to ODC? Check out the [ODC Overview](index.md).
+-  For information on managing your ODC virtual machine instances,
+    see [Creating and managing instances](creating-managing-instances.md).
