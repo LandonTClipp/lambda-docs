@@ -1,3 +1,9 @@
+---
+description: Learn how to use Hugging Face libraries to generate images and chatbot-style responses on a Lambda On-Demand Cloud NVIDIA GH200 instance.
+tags:
+  - on-demand cloud
+---
+
 # Running Hugging Face Transformers and Diffusers on an NVIDIA GH200 instance
 
 [Hugging Face](https://huggingface.co/){ target="_blank" .external } provides

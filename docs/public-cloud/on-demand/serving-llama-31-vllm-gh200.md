@@ -1,3 +1,9 @@
+---
+description: Learn how to serve models on a Lambda On-Demand Cloud NVIDIA GH200 instance using vLLM.
+tags:
+  - on-demand cloud
+---
+
 # Serving Llama 3.1 8B using vLLM on an NVIDIA GH200 instance
 
 This tutorial outlines how to serve Llama 3.1 8B using vLLM on an

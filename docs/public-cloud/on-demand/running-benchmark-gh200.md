@@ -1,3 +1,9 @@
+---
+description: Learn how to benchmark a Lambda On-Demand Cloud NVIDIA GH200 instance.
+tags:
+  - on-demand cloud
+---
+
 # Running a PyTorch^&reg;^-based benchmark on an NVIDIA GH200 instance
 
 This tutorial describes how to run an NGC-based benchmark on an On-Demand Cloud
