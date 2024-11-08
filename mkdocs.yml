@@ -35,12 +35,13 @@ nav:
     - public-cloud/teams.md
     - public-cloud/cloud-api.md
     - public-cloud/lambda-chat-api.md
+    - public-cloud/on-demand/guest-agent.md
     - On-Demand:
       - public-cloud/on-demand/index.md
       - public-cloud/on-demand/getting-started.md
+      - public-cloud/on-demand/connecting-instance.md
       - public-cloud/on-demand/dashboard.md
       - public-cloud/on-demand/billing.md
-      - public-cloud/on-demand/guest-agent.md
     - 1-Click Clusters:
       - public-cloud/1-click-clusters/index.md
       - public-cloud/1-click-clusters/serving-llama-3_1-405b.md
@@ -122,6 +123,7 @@ markdown_extensions:
   - admonition
   - attr_list
   - md_in_html
+  - pymdownx.details
   - pymdownx.emoji:
       emoji_index: !!python/name:material.extensions.emoji.twemoji
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
