@@ -35,7 +35,8 @@ nav:
     - public-cloud/teams.md
     - public-cloud/cloud-api.md
     - public-cloud/lambda-chat-api.md
-    - public-cloud/on-demand/guest-agent.md
+    - public-cloud/guest-agent.md
+    - public-cloud/importing-exporting-data.md
     - On-Demand:
       - public-cloud/on-demand/index.md
       - public-cloud/on-demand/getting-started.md
