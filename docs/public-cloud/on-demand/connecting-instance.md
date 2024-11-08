@@ -296,4 +296,6 @@ your instance:
 
 ## Next steps
 
-New to ODC? Check out the [ODC Overview](index.md).
+-  New to ODC? Check out the [ODC Overview](index.md).
+-  For guidance on managing your ODC environment, see
+    [Managing your system environment](../managing-system-environment.md).
