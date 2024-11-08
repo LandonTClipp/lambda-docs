@@ -8,10 +8,9 @@ GPU Cloud on-demand instance):
 1.  Using your existing SSH key, SSH into your server.
 
     Alternatively, if you're using an on-demand instance, open a terminal in
-    [Jupyter
-    Notebook](https://docs.lambdalabs.com/cloud/open-jupyter-notebook/).
+    [JupyterLab](../../public-cloud/on-demand/getting-started.md#how-do-i-open-jupyterlab-on-my-instance).
 
-1.  Import the SSH key from the GitHub account by running:
+2.  Import the SSH key from the GitHub account by running:
 
     ```bash
     ssh-import-id gh:USERNAME
