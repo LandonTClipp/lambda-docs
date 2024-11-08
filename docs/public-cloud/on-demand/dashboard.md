@@ -13,16 +13,23 @@ makes it easy to get started using Lambda GPU Cloud.
 
 From the dashboard, you can:
 
-* [Launch, restart, and terminate
-  instances](#launch-restart-and-terminate-instances)
-* [Create and manage persistent storage file
-  systems](#create-and-manage-persistent-storage-file-systems)
-* [Add, generate, and delete SSH keys](#add-generate-and-delete-ssh-keys)
-* [Generate and delete API keys](#generate-and-delete-api-keys)
-* [Use the Demos feature](#use-the-demos-feature)
-* [View usage](#view-usage)
-* [Manage a Team](#manage-a-team)
-* [Modify account settings](#modify-account-settings)
+- [Launch, restart, and terminate instances](#launch-restart-and-terminate-instances)
+    - [Launch instances](#launch-instances)
+    - [Restart instances](#restart-instances)
+    - [Terminate instances](#terminate-instances)
+- [Create and manage persistent storage file systems](#create-and-manage-persistent-storage-file-systems)
+    - [Create a persistent storage file system](#create-a-persistent-storage-file-system)
+- [Add, generate, and delete SSH keys](#add-generate-and-delete-ssh-keys)
+    - [Add or generate an SSH key](#add-or-generate-an-ssh-key)
+    - [Add an existing SSH key](#add-an-existing-ssh-key)
+    - [Generate a new SSH key](#generate-a-new-ssh-key)
+    - [Delete SSH keys](#delete-ssh-keys)
+- [Generate and delete API keys](#generate-and-delete-api-keys)
+    - [Generate API keys](#generate-api-keys)
+    - [Delete API keys](#delete-api-keys)
+- [View usage](#view-usage)
+- [Manage a Team](#manage-a-team)
+- [Modify account settings](#modify-account-settings)
 
 ## Launch, restart, and terminate instances
 
@@ -88,9 +95,9 @@ When prompted to do so, type in **erase data on instance**, then click
 
     You can also [terminate instances using the Cloud API](#).
 
-### Create and manage persistent storage file systems
+## Create and manage persistent storage file systems
 
-#### Create a persistent storage file system
+### Create a persistent storage file system
 
 To create a persistent storage file system:
 
@@ -105,11 +112,11 @@ To create a persistent storage file system:
 
 You should now see your persistent storage file system listed in the dashboard.
 
-### Add, generate, and delete SSH keys
+## Add, generate, and delete SSH keys
 
-#### Add or generate an SSH key
+### Add or generate an SSH key
 
-##### Add an existing SSH key
+### Add an existing SSH key
 
 1.  Click [**SSH keys**
     :octicons-link-external-16:](https://cloud.lambdalabs.com/ssh-keys){target="_blank"}
@@ -120,7 +127,7 @@ You should now see your persistent storage file system listed in the dashboard.
 2. In the text input box, paste your public SSH key. Enter a name for your key,
    then click **Add SSH key**.
 
-##### Generate a new SSH key
+### Generate a new SSH key
 
 Instead of pasting your public SSH key as instructed, above, click **Generate a
 new SSH key**. Type in a name for your key, then click **Create**.
@@ -132,14 +139,14 @@ The private key for your new SSH key will automatically download.
     You can also [use the Cloud API to add and generate SSH
     keys](../cloud-api.md#add-an-existing-ssh-key-to-your-account).
 
-#### Delete SSH keys
+### Delete SSH keys
 
 Delete SSH keys by clicking **Delete** at the far-right of the SSH key you want
 to delete.
 
-### Generate and delete API keys
+## Generate and delete API keys
 
-#### Generate API keys
+### Generate API keys
 
 Generate API keys by clicking [**API keys**
 :octicons-link-external-16:](https://cloud.lambdalabs.com/api-keys){target="_blank"}
@@ -147,24 +154,18 @@ in the left sidebar of the dashboard.
 
 Then, click **Generate API Key** at the top-right of the dashboard.
 
-#### Delete API keys
+### Delete API keys
 
 Delete API keys by clicking **Delete** at the far-right of the API key you want
 to delete.
 
-### Use the Demos feature
-
-Use the Demos feature by clicking [**Demos**
-:octicons-link-external-16:](https://cloud.lambdalabs.com/edit-demos){target="_blank"}
-in the left sidebar of the dashboard.
-
-### View usage
+## View usage
 
 View usage information by clicking [**Usage**
 :octicons-link-external-16:](https://cloud.lambdalabs.com/usage){target="_blank"}
 in the left sidebar of the dashboard.
 
-### Manage a Team
+## Manage a Team
 
 Click [**Team**
 :octicons-link-external-16:](https://cloud.lambdalabs.com/team){target="_blank"}
@@ -173,7 +174,7 @@ at the bottom of the left sidebar to access the Team feature.
 Learn how to manage a Team by reading our FAQ on [getting started with the Team
 feature](#).
 
-### Modify account settings
+## Modify account settings
 
 Click [**Settings**
 :octicons-link-external-16:](https://cloud.lambdalabs.com/settings){target="_blank"}

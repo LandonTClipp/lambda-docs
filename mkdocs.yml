@@ -155,6 +155,7 @@ plugins:
   - social
   - redirects:
       redirect_maps:
+        'public-cloud/on-demand/guest-agent.md': 'public-cloud/guest-agent.md'
         'on-demand-cloud/getting-started.md': 'public-cloud/on-demand/getting-started.md'
         'on-demand-cloud/using-skypilot-to-deploy-a-kubernetes-cluster.md': 'education/scheduling-and-orchestration/skypilot-deploy-kubernetes.md'
         'on-demand-cloud/team.md': 'public-cloud/teams.md'
@@ -164,7 +165,6 @@ plugins:
         'on-demand-cloud/firewall.md': 'public-cloud/firewalls.md'
         'on-demand-cloud/cloud-api.md': 'public-cloud/cloud-api.md'
         'on-demand-cloud/overview.md': 'public-cloud/on-demand/index.md'
-        'on-demand-cloud/demos.md': 'public-cloud/on-demand/demos.md'
         'on-demand-cloud/tutorial-getting-started-with-training-a-machine-learning-model.md': 'education/tutorial-getting-started-with-training-a-machine-learning-model.md'
         'on-demand-cloud/deploying-a-llama-3-inference-endpoint.md': 'education/large-language-models/deploying-a-llama-3-inference-endpoint.md'
         'on-demand-cloud/using-the-lambda-chat-completions-api.md': 'public-cloud/lambda-chat-api.md'
@@ -174,7 +174,6 @@ plugins:
         'on-demand-cloud/how-to-serve-the-llama-3.1-8b-and-70b-models-using-lambda-cloud-on-demand-instances.md': 'education/large-language-models/serving-llama-3-1-docker.md'
         'on-demand-cloud/deploying-models-with-dstack.md': 'education/scheduling-and-orchestration/deploying-models-with-dstack.md'
         'on-demand-cloud/file-systems.md': 'public-cloud/filesystems.md'
-        'tensorbook/getting-started.md': 'hardware/tensorbook/getting-started.md'
         'workstations/troubleshooting-workstations-and-desktops.md': 'hardware/workstations/troubleshooting.md'
         'workstations/getting-started.md': 'hardware/workstations/getting-started.md'
         'software/virtual-environments-and-docker-containers.md': 'education/programming/virtual-environments-containers.md'
@@ -207,5 +206,4 @@ extra:
     - icon: fontawesome/brands/linkedin-in
       link: https://www.linkedin.com/company/lambda-labs
   analytics:
-    provider: google
-    property: G-43EZT1FM6Q
+    provider: custom

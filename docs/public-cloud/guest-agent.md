@@ -53,6 +53,9 @@ flowchart LR
     end
     prometheus -->|Prom HTTP over TCP| MetricsForwarder
     FrontEnd -->|WIP: Front-End Visualizations| prometheus
+
+    style Hypervisor fill:#80808080;
+    style VM fill:#80808080;
 ```
 
 In this tutorial, you'll install the guest agent and set up
@@ -197,7 +200,7 @@ To set up Prometheus and Grafana:
 1. At the top-right of the dashboard, click the **+**. Then, choose **Import
    dashboard**.
 
-    ![Screenshot of how to import dashboard](../../assets/images/import-dashboard.png)
+    ![Screenshot of how to import dashboard](../assets/images/import-dashboard.png)
 
 1. In the **Import via dashboard JSON model** field, enter the
    [example JSON model](https://gist.githubusercontent.com/LandonTClipp/964e90507d660e3fb710b4137be6cd6f/raw/bc7abd797da65581534513c153d1ad3d1b8e4bbe/lambda-guest-agent-grafana-model.json){ .external target="_blank" }
@@ -212,13 +215,56 @@ To set up Prometheus and Grafana:
     - InfiniBand transfer rates
     - local storage transfer rates
 
-    ![Screenshot of an example Grafana dashboard](../../assets/images/grafana-dashboard-guest-agent.png)
+    ![Screenshot of an example Grafana dashboard](../assets/images/grafana-dashboard-guest-agent.png)
 
     !!! note
 
         On-demand instances, unlike
-        [1-Click Clusters](../1-click-clusters/index.md), don't use InfiniBand
+        [1-Click Clusters](1-click-clusters/index.md), don't use InfiniBand
         fabric. Accordingly, the InfiniBand transfer rates will always be zero.
+
+## Security
+
+During the public beta release of guest-agent, the service exposes a Prometheus
+listener on `0.0.0.0:9101`. As mentioned before, this listener is a temporary
+measure to allow customers to gain access to metrics before they are available
+on [lambdalabs.com](https://lambdalabs.com/){ .external target="_blank" }. The
+sections below describe the implications of this listener for our public cloud
+products.
+
+### 1CC
+
+Compute nodes in 1-Click-Clusters are not capable of accepting connections from
+the public internet. Consequently, the `0.0.0.0:9101` listener can only be queried
+from your head nodes. When self-hosting Prometheus and Grafana, it's recommended
+to install them on one of your head nodes. This way, no tunnels are required to
+access guest-agent metrics.
+
+### On-Demand
+
+When installed on an on-demand node, guest-agent metrics can only be queried after
+exposing them either through an SSH tunnel (as described in [Install the guest agent](#install-the-guest-agent)),
+or by opening up a hole in the Lambda firewall to accept connection requests to
+port 9101. It is _NOT_ recommended to open up the firewall, as guest-agent is not
+configured for TLS nor for any sort of authorization. Thus, an SSH tunnel is the
+safest route as encryption and authorization can be done through the SSH protocol.
+
+If you decide that opening guest-agent to the firewall is acceptable, you can do
+so by selecting the `Firewall` tab in your [cloud dashboard](https://cloud.lambdalabs.com){ .external target="_blank" }
+and adding a rule that looks like this:
+
+![](../assets/images/guest-agent-firewall-rule.png)
+
+### Data Privacy
+
+Lambda takes your data privacy seriously. When you install guest-agent, we forward
+your metrics to our internal metrics infrastructure. Lambda does not store any
+personally identifying information in our metrics backend. The only customer-specific
+identifiers we store is a unique ID that will only be used to allow [lambdalabs.com](https://lambdalabs.com/){ .external target="_blank" }
+to gather your specific data once visualizations are available there. We do not store names,
+email addresses, street addresses, billing information, VM hostnames, or any other
+personally-identifying information on our metrics backend beyond what is
+necessary to serve your data to you.
 
 ## Updates
 

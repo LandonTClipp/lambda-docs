@@ -94,9 +94,9 @@ instances.
     done
     ```
 
-## How do I open Jupyter Notebook on my instance?
+## How do I open JupyterLab on my instance?
 
-To open Jupyter Notebook on your instance:
+To open JupyterLab on your instance:
 
 1. In the [GPU instances dashboard
    :octicons-link-external-16:](https://cloud.lambdalabs.com/instances){target="_blank"},
@@ -105,9 +105,9 @@ To open Jupyter Notebook on your instance:
 
 !!! tip
 
-    Watch Lambda's [GPU Cloud Tutorial with Jupyter
-    Notebook :octicons-link-external-16:](https://www.youtube.com/watch?v=CKxR6ClKstU){target="_blank"} video on YouTube to
-    learn more about using Jupyter Notebook on Lambda GPU Cloud instances.
+    Watch Lambda's [GPU Cloud Tutorial with JupyterLab
+    :octicons-link-external-16:](https://www.youtube.com/watch?v=CKxR6ClKstU){target="_blank"} video on YouTube to
+    learn more about using JupyterLab on Lambda GPU Cloud instances.
 
 ## How do I upgrade Python?
 
@@ -178,15 +178,14 @@ To install another version of Python alongside the preinstalled version:
 !!! warning
 
     **Do not run `sudo do-release-upgrade` or try to upgrade to the latest
-    Ubuntu release.** Doing so will break [Jupyter
-    Notebook](#how-do-i-open-jupyter-notebook-on-my-instance) and unless you
+    Ubuntu release.** Doing so will break [JupyterLab](#how-do-i-open-jupyterlab-on-my-instance) and unless you
     have [SSH access](#) to your instance, [Lambda Support
     :octicons-link-external-16:](https://lambdalabs.com/support){target="_blank"}
     won't be able to help you recover your data.
 
-    Jupyter Notebook on our instances is configured and tested for the
+    JupyterLab on our instances is configured and tested for the
     preinstalled version of Python. Upgrading to the latest Ubuntu release will
-    replace the preinstalled version of Python and make Jupyter Notebook
+    replace the preinstalled version of Python and make JupyterLab
     inaccessible.
 
 ## Is it possible to use more than one SSH key?
@@ -276,8 +275,7 @@ Multi-GPU instances usually take 10-15 minutes to launch.
 
 !!! note
 
-    [Jupyter Notebook](#how-do-i-open-jupyter-notebook-on-my-instance) and
-    [Demos](#) can take a few minutes after an instance launches to become
+    [JupyterLab](#how-do-i-open-jupyterlab-on-my-instance) can take a few minutes after an instance launches to become
     accessible.
 
 !!! note

@@ -38,27 +38,31 @@ User manuals for Lambda server chassis can be downloaded below.
 
 | Chassis                     | User manual                                                                |
 | --------------------------- | -------------------------------------------------------------------------- |
-| SuperServer 420GP-TNR       | [Download](https://www.supermicro.com/manuals/superserver/4U/MNL-2389.pdf) |
-| AS -4124GO-NART             | [Download](https://www.supermicro.com/manuals/superserver/4U/MNL-2379.pdf) |
-| AS -1124US-TNRP             | [Download](https://www.supermicro.com/manuals/superserver/1U/MNL-2286.pdf) |
-| AS -1114CS-TNR              | [Download](https://www.supermicro.com/manuals/superserver/1U/MNL-2397.pdf) |
-| AS -2124GQ-NART             | [Download](https://www.supermicro.com/manuals/superserver/2U/MNL-2356.pdf) |
-| AS -4023S-TRT               | [Download](https://www.supermicro.com/manuals/superserver/4U/MNL-2037.pdf) |
-| SuperServer 4029GP-TRT2     | [Download](https://www.supermicro.com/manuals/superserver/4U/MNL-2107.pdf) |
-| SuperWorkstation 740GP-TNRT | [Download](https://www.supermicro.com/manuals/superserver/4U/MNL-2292.pdf) |
-| AS -2124US-TNRP             | [Download](https://www.supermicro.com/manuals/superserver/2U/MNL-2288.pdf) |
-| SuperServer 420GP-TNAR      | [Download](https://www.supermicro.com/manuals/superserver/4U/MNL-2350.pdf) |
+| SuperServer 420GP-TNR       | [:material-file-pdf-box: Download](https://www.supermicro.com/manuals/superserver/4U/MNL-2389.pdf){ target="_blank" } |
+| AS -4124GO-NART             | [:material-file-pdf-box: Download](https://www.supermicro.com/manuals/superserver/4U/MNL-2379.pdf){ target="_blank" } |
+| AS -1124US-TNRP             | [:material-file-pdf-box: Download](https://www.supermicro.com/manuals/superserver/1U/MNL-2286.pdf){ target="_blank" } |
+| AS -1114CS-TNR              | [:material-file-pdf-box: Download](https://www.supermicro.com/manuals/superserver/1U/MNL-2397.pdf){ target="_blank" } |
+| AS -2124GQ-NART             | [:material-file-pdf-box: Download](https://www.supermicro.com/manuals/superserver/2U/MNL-2356.pdf){ target="_blank" } |
+| AS -4023S-TRT               | [:material-file-pdf-box: Download](https://www.supermicro.com/manuals/superserver/4U/MNL-2037.pdf){ target="_blank" } |
+| SuperServer 4029GP-TRT2     | [:material-file-pdf-box: Download](https://www.supermicro.com/manuals/superserver/4U/MNL-2107.pdf){ target="_blank" } |
+| SuperWorkstation 740GP-TNRT | [:material-file-pdf-box: Download](https://www.supermicro.com/manuals/superserver/4U/MNL-2292.pdf){ target="_blank" } |
+| AS -2124US-TNRP             | [:material-file-pdf-box: Download](https://www.supermicro.com/manuals/superserver/2U/MNL-2288.pdf){ target="_blank" } |
+| SuperServer 420GP-TNAR      | [:material-file-pdf-box: Download](https://www.supermicro.com/manuals/superserver/4U/MNL-2350.pdf){ target="_blank" } |
+| SuperServer SYS-821GE-TNHR  | [:material-file-pdf-box: Download](https://www.supermicro.com/manuals/superserver/8U/MNL-2596.pdf){ target="_blank" } |
+| AS -8125GS-TNHR             | [:material-file-pdf-box: Download](https://www.supermicro.com/manuals/superserver/8U/MNL-2598.pdf){ target="_blank" } |
+| AS -4125GS-TNRT             | [:material-file-pdf-box: Download](https://www.supermicro.com/manuals/superserver/4U/MNL-2614.pdf){ target="_blank" } |
+| SuperServer SYS-421GE-TNRT  | [:material-file-pdf-box: Download](https://www.supermicro.com/manuals/superserver/4U/MNL-2593.pdf){ target="_blank" } |
 
 ### GIGABYTE
 
-| Chassis  | User manual                                                                                                 |
-| -------- | ----------------------------------------------------------------------------------------------------------- |
-| R152-Z33 | [Download](https://download.gigabyte.com/FileList/Manual/server\_manual\_R152-Z33\_e\_10.pdf)               |
-| G292-Z43 | [Download](https://download.gigabyte.com/FileList/Manual/server\_system\_manual\_G292-Z43\_e\_v10.pdf)      |
-| G292-Z24 | [Download](https://download.gigabyte.com/FileList/Manual/server\_system\_manual\_G292-Z24\_e\_A00.pdf)      |
-| G292-Z22 | [Download](https://download.gigabyte.com/FileList/Manual/server\_system\_manual\_g292-z20\_z22\_e\_1.0.pdf) |
-| G292-Z42 | [Download](https://download.gigabyte.com/FileList/Manual/server\_system\_manual\_g292-z40\_z42\_e\_1.0.pdf) |
-| G292-280 | [Download](https://download.gigabyte.com/FileList/Manual/server\_manual\_G292-280\_e\_10.pdf)               |
+| Chassis  | User manual                                                                                                                                            |
+| -------- | -------------------------------------------------------------------------------------------------------------------------------------------------------|
+| R152-Z33 | [:material-file-pdf-box: Download](https://download.gigabyte.com/FileList/Manual/server\_manual\_R152-Z33\_e\_10.pdf){ target="_blank" }               |
+| G292-Z43 | [:material-file-pdf-box: Download](https://download.gigabyte.com/FileList/Manual/server\_system\_manual\_G292-Z43\_e\_v10.pdf){ target="_blank" }      |
+| G292-Z24 | [:material-file-pdf-box: Download](https://download.gigabyte.com/FileList/Manual/server\_system\_manual\_G292-Z24\_e\_A00.pdf){ target="_blank" }      |
+| G292-Z22 | [:material-file-pdf-box: Download](https://download.gigabyte.com/FileList/Manual/server\_system\_manual\_g292-z20\_z22\_e\_1.0.pdf){ target="_blank" } |
+| G292-Z42 | [:material-file-pdf-box: Download](https://download.gigabyte.com/FileList/Manual/server\_system\_manual\_g292-z40\_z42\_e\_1.0.pdf){ target="_blank" } |
+| G292-280 | [:material-file-pdf-box: Download](https://download.gigabyte.com/FileList/Manual/server\_manual\_G292-280\_e\_10.pdf){ target="_blank" }               |
 
 ## Where do I find my server's serial number?
 
@@ -97,7 +101,9 @@ On Supermicro chassis, the IPMI password appears on one or more of the following
 * A sticker near the motherboard serial number label.
 * The service tag.
 
-See Supermicro's [BMC Unique Password Guide \[PDF\]](https://www.supermicro.com/support/BMC\_Unique\_Password\_Guide.pdf) for more information.
+See Supermicro's
+[:material-file-pdf-box: BMC Unique Password Guide](https://www.supermicro.com/support/BMC\_Unique\_Password\_Guide.pdf){ target="_blank" }
+for more information.
 
 ### GIGABYTE
 
@@ -106,7 +112,9 @@ On GIGABYTE chassis, the IPMI password appears on one or more of the following:
 * A sticker affixed to the motherboard.
 * The chassis itself.
 
-See GIGABYTE's [BMC Unique Pre-Programmed Password Reference Guide \[PDF\]](https://www.gigabyte.com/Fileupload/Global/Multimedia/101/file/573/1015.pdf) for more information.
+See GIGABYTE's
+[:material-file-pdf-box: BMC Unique Pre-Programmed Password Reference Guide](https://www.gigabyte.com/Fileupload/Global/Multimedia/101/file/573/1015.pdf){ target="_blank" }
+for more information.
 
 ## What are the power requirements for my server's PSUs?
 
@@ -125,19 +133,16 @@ The power requirements for Lambda server power supply units (PSUs) are as follow
 |              |              | 3000    | 207.1-240    | 16-14.5     | 60/50          |              |                          |
 | Supermicro   | PWS-3K06G-2R | 3000    | 207.1-240    | 16-14.5     | 60/50          | C20/C19      |                          |
 
-\
-Power connector inlets and outlets
-
-This is what **C14 inlets** and **C13 outlets** look like:
+This is what **C13 outlets** and **C14 inlets** look like:
 
 <figure markdown="span">
-  ![Supermicro server serial number](../../assets/images/power-cord-c13-c14.png)
-  <figcaption>Power cord with C14 and C13 connectors</figcaption>
+  ![Image of C13 outlet and C14 inlet](../../assets/images/C13_C14.png)
+  <figcaption>C13 outlet and C14 inlet</figcaption>
 </figure>
 
-This is what **C20 inlets** and **C19 outlets** look like:
+This is what **C19 outlets** and **C20 inlets** look like:
 
 <figure markdown="span">
-  ![Supermicro server serial number](../../assets/images/power-cord-c19-c20.png)
-  <figcaption>Power cord with C20 and C19 connectors</figcaption>
+  ![Image of C19 outlet and C20 inlet](../../assets/images/C19_C20.png)
+  <figcaption>C19 outlet and C20 inlet</figcaption>
 </figure>

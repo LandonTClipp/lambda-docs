@@ -11,7 +11,7 @@ tags:
 
 Each 1CC includes 3x CPU management (head) nodes for use as jump boxes (bastion hosts) and for cluster administration and job scheduling. These management nodes are assigned public IP addresses and are directly accessible over the Internet via SSH.
 
-All nodes can be directly accessed using [Jupyter Notebook](../on-demand/getting-started.md#how-do-i-open-jupyter-notebook-on-my-instance) from the Lambda On-Demand Cloud dashboard.
+All nodes can be directly accessed using [JupyterLab](../on-demand/getting-started.md#how-do-i-open-jupyterlab-on-my-instance) from the Lambda On-Demand Cloud dashboard.
 
 1CC nodes are in an isolated private network and can communicate freely with each other using private IP addresses.
 
@@ -56,7 +56,7 @@ Your 1CC will automatically launch on the day your reservation begins. You’ll 
 
 ## Accessing your 1-Click Cluster
 
-Your 1CC's management nodes have public IP addresses and can be accessed directly via SSH. You can access your compute nodes via SSH using a management node as a jump box. You can also access both your management nodes and your compute nodes using [Jupyter Notebook](../on-demand/getting-started.md#how-do-i-open-jupyter-notebook-on-my-instance).
+Your 1CC's management nodes have public IP addresses and can be accessed directly via SSH. You can access your compute nodes via SSH using a management node as a jump box. You can also access both your management nodes and your compute nodes using [JupyterLab](../on-demand/getting-started.md#how-do-i-open-jupyterlab-on-my-instance).
 If you want to access your management nodes through SSH, make sure your [Firewall rules](https://cloud.lambdalabs.com/firewall) are configured to allow SSH traffic.
 
 To access your management nodes and compute nodes via SSH:

@@ -31,8 +31,7 @@ If you haven't already, use the
 [dashboard](https://cloud.lambdalabs.com/instances) or [Cloud
 API](https://docs.lambdalabs.com/on-demand-cloud/cloud-api) to launch a 1x or
 8x A100 instance, or a 1x or 8x H100 instance. Then, SSH into the instance.
-Alternatively, you can use [Jupyter
-Notebook](https://docs.lambdalabs.com/on-demand-cloud/getting-started#how-do-i-open-jupyter-notebook-on-my-instance)
+Alternatively, you can use [JupyterLab](../../public-cloud/on-demand/getting-started.md#how-do-i-open-jupyterlab-on-my-instance)
 to access the instance.
 
 Clone the [FLUX.1 inference GitHub

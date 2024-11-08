@@ -21,6 +21,10 @@ or
 
     Try [Lambda Chat](https://lambda.chat/chatui/){ .external target="_blank" }!
 
+    Also try
+    [Companion](https://www.companionai.dev/){ .external target="_blank" },
+    powered by the Lambda Chat Completions API.
+
     Contact us to learn more about our:
 
     - [Public inference endpoints](https://lambdalabs.com/talk-to-an-engineer?primary_product_interest=Public+Inference+Endpoints){ .external target="_blank" }

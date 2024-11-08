@@ -160,6 +160,11 @@ and managing Jupyter notebooks. You can access your instance's JupyterLab by
 visiting the [Instances page](https://cloud.lambdalabs.com/instances) in the
 Lambda Cloud dashboard and clicking **Cloud IDE** in your instance's row.
 
+!!! note
+
+    [JupyterLab](getting-started.md#how-do-i-open-jupyterlab-on-my-instance) can take a few minutes after an instance launches to become
+    accessible.
+
 ## Next steps
 
 * [Visit the Lambda Cloud portal](https://cloud.lambdalabs.com)
