@@ -275,7 +275,7 @@ your desktop environment:
 
     !!! note
 
-        Most VNC servers choose the port on which to server a display by adding
+        Most VNC servers choose the port on which to serve a display by adding
         the display number to 5900. Because you're connecting to display 1,
         this example connects on port 5901.
 
