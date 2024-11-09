@@ -195,6 +195,17 @@ If the import is successful, you should see output similar to the following:
 2023-08-04 15:03:52,623 INFO [1] SSH keys [Authorized]
 ```
 
+## Accessing JupyterHub and Jupyter notebooks {: id="accessing-jupyterhub" }
+
+Lambda preinstalls JupyterHub on each instance by default. To open JupyterHub on
+your instance:
+
+1. Navigate to the
+    [Instances page](https://cloud.lambdalabs.com/instances){: target="_blank" .external }
+    in the Lambda Cloud console.
+1. In your instance's row, in the **Cloud IDE** column, click **Launch**.
+    JupyterHub opens.
+
 ## Connecting to your instance's desktop environment {: #connecting-to-desktop-environment }
 
 If you prefer working in a graphical desktop environment, you can set one up
@@ -282,17 +293,6 @@ your desktop environment:
 1. Install your preferred VNC client solution.
 1. In your client, connect to `localhost:5091` and then enter your VNC
     server password. Your desktop environment should appear in a new window.
-
-## Accessing JupyterHub and Jupyter notebooks {: id="accessing-jupyterhub" }
-
-Lambda preinstalls JupyterHub on each instance by default. To open JupyterHub on
-your instance:
-
-1. Navigate to the
-    [Instances page](https://cloud.lambdalabs.com/instances){: target="_blank" .external }
-    in the Lambda Cloud console.
-1. In your instance's row, in the **Cloud IDE** column, click **Launch**.
-    JupyterHub opens.
 
 ## Next steps
 
