@@ -4,12 +4,12 @@ tags:
   - on-demand cloud
 ---
 
-# Running a PyTorch^&reg;^-based benchmark on an NVIDIA GH200 instance
+# Running a PyTorch®-based benchmark on an NVIDIA GH200 instance
 
 This tutorial describes how to run an NGC-based benchmark on an On-Demand Cloud
 (ODC) instance backed with the NVIDIA GH200 Grace Hopper Superchip. The tutorial
 also outlines how to run the benchmark on other ODC instance types to compare
-performance. The benchmark uses a variety of PyTorch^&reg;^ examples from
+performance. The benchmark uses a variety of PyTorch® examples from
 NVIDIA's
 [Deep Learning Examples](https://github.com/NVIDIA/DeepLearningExamples/tree/master/PyTorch){ target="_blank" .external }
 repository.
@@ -74,7 +74,7 @@ Next, set the environment variables you need to run the benchmark:
     !!! note
 
         If desired, you can update the value of `NAME_NGC` below to
-        reflect the latest version of PyTorch^&reg;^. This tutorial isn't pinned
+        reflect the latest version of PyTorch®. This tutorial isn't pinned
         to a specific version.
 
     ```
@@ -108,7 +108,7 @@ instance:
     repository on GitHub and then fork the repository. By using your own fork
     instead of the original repository, you'll be able to push your benchmark
     results to a single location.
-1. In your ODC instance's JupyterHub terminal, pull the NGC PyTorch^&reg;^
+1. In your ODC instance's JupyterHub terminal, pull the NGC PyTorch®
     Docker image:
 
     ```bash
@@ -141,7 +141,7 @@ instance:
     /bin/bash -c "cp -r /scripts/* /workspace; ./run_prepare.sh ${NAME_DATASET}"
     ```
 
-1. Create a PyTorch^&reg;^ configuration file for the benchmark:
+1. Create a PyTorch® configuration file for the benchmark:
 
     ```bash
     cp scripts/config_v2/config_pytorch_${NUM_GPU}x${NAME_GPU}_v2.sh scripts/config_v2/config_pytorch_${NAME_TYPE}_${NUM_GPU}x${NAME_GPU}_$(hostname)_v2.sh

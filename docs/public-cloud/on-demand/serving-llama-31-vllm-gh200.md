@@ -223,7 +223,7 @@ unnecessary costs:
 ## Next steps
 
 -  To learn how to benchmark your GH200 instance against other instances, see
-    [Running a PyTorch^&reg;^-based benchmark on an NVIDIA GH200 instance](running-benchmark-gh200.md).
+    [Running a PyTorch®-based benchmark on an NVIDIA GH200 instance](running-benchmark-gh200.md).
 -  For details on using vLLM to serve models on other instance types, see
     [Serving the Llama 3.1 8B and 70B models using Lambda Cloud on-demand instances](../../education/large-language-models/serving-llama-3-1-docker.md).
 -  To learn how to use Hugging Face's Diffusers and Transformers libraries on
