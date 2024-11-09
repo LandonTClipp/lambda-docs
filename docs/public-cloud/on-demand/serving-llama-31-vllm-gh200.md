@@ -205,7 +205,7 @@ expected:
 
 Optionally, you can add a firewall rule to allow external traffic to your API
 server. For details, see
-[Firewalls &gt; Creating a firewall rule](../firewalls.md#creating-a-firewall-rule).
+[Firewalls > Creating a firewall rule](../firewalls.md#creating-a-firewall-rule).
 vLLM serves on port 8000 by default.
 
 ## Cleaning up
