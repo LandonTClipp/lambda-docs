@@ -84,7 +84,7 @@ environment using `venv`:
         [`venv`](https://docs.python.org/3/library/venv.html#how-venvs-work){: target="_blank" .external }
         in the Python docs.
 
-You can exit your virtual environment by typing `exit()`. To return to the
+You can exit your virtual environment by typing `deactivate`. To return to the
 environment, run step 3 from the directory you selected in step 1.
 
 ### Isolating your environment using conda
