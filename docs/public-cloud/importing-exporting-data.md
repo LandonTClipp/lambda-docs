@@ -68,13 +68,13 @@ between remote servers:
     ssh -A <USERNAME>@<SERVER-IP>
     ```
 
-1. On that server, start a `screen` session for your copy operation,
-    replacing `<SESSION-NAME>` with an appropriate session name. `screen` lets
+1. On that server, start a `tmux` session for your copy operation,
+    replacing `<SESSION-NAME>` with an appropriate session name. `tmux` lets
     you create and manage multiple terminal sessions within a single terminal
     window or tab.
 
     ```bash
-    screen -S <SESSION-NAME>
+    tmux new-session -s <SESSION-NAME>
     ```
 
 1. Copy files to your remote destination server. Replace `<FILES>` with the
@@ -86,9 +86,10 @@ between remote servers:
     rsync -av --info=progress2 <FILES> <USERNAME>@<SERVER-IP>:<REMOTE-PATH>
     ```
 
-1. Optionally, detach your `screen` session by pressing ++ctrl++ + ++a++, then
-    ++d++. You can resume the session by running `screen -r <SESSION-NAME>`,
-    replacing `<SESSION-NAME>` with the session name you chose in step 2.
+1. Optionally, detach your `tmux` session by pressing ++ctrl++ + ++b++, then
+    ++d++. You can resume the session by running
+    `tmux attach-session -t <SESSION-NAME>`, replacing `<SESSION-NAME>` with
+    the session name you chose in step 2.
 
 ### Importing data from S3 or S3-compatible object storage
 

@@ -56,7 +56,7 @@ following formats:
 
 To add an existing SSH key:
 
-1. Navigate to the [SSH keys page](https://cloud.lambdalabs.com/ssh-keys){: target="_blank" .external }
+1. Navigate to the [SSH keys page](https://cloud.lambdalabs.com/ssh-keys){ target="_blank" .external }
     in the Lambda Cloud console.
 1. Click **Add SSH Key**. A dialog appears.
 1. In the dialog, in the text input box, paste your public SSH key.
