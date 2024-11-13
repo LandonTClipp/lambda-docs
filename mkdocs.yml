@@ -36,9 +36,13 @@ nav:
     - public-cloud/cloud-api.md
     - public-cloud/lambda-chat-api.md
     - public-cloud/guest-agent.md
+    - public-cloud/importing-exporting-data.md
     - On-Demand:
       - public-cloud/on-demand/index.md
       - public-cloud/on-demand/getting-started.md
+      - public-cloud/on-demand/connecting-instance.md
+      - public-cloud/on-demand/creating-managing-instances.md
+      - public-cloud/on-demand/managing-system-environment.md
       - public-cloud/on-demand/dashboard.md
       - public-cloud/on-demand/billing.md
     - 1-Click Clusters:
@@ -52,8 +56,6 @@ nav:
       - 'YouTube': 'https://www.youtube.com/c/LambdaLabs'
       - 'Main site': 'https://lambdalabs.com/'
       - 'Tags index': 'tags.md'
-    - We welcome your feedback!:
-      - 'File an issue': 'https://github.com/LambdaLabs/lambda-docs/issues/new/choose'
   - Private Cloud:
     - private-cloud/index.md
     - Managed Kubernetes:
@@ -65,9 +67,6 @@ nav:
       - 'YouTube': 'https://www.youtube.com/c/LambdaLabs'
       - 'Main site': 'https://lambdalabs.com/'
       - 'Tags index': 'tags.md'
-    - We welcome your feedback!:
-      # URL needs to change post migration
-      - 'File an issue': 'https://github.com/LambdaLabs/lambda-docs/issues/new/choose'
   - Hardware:
       - hardware/index.md
       - Servers:
@@ -81,9 +80,6 @@ nav:
         - 'YouTube': 'https://www.youtube.com/c/LambdaLabs'
         - 'Main site': 'https://lambdalabs.com/'
         - 'Tags index': 'tags.md'
-      - We welcome your feedback!:
-        # URL needs to change post migration
-        - 'File an issue': 'https://github.com/LambdaLabs/lambda-docs/issues/new/choose'
   - Education:
     - education/index.md
     - education/tutorial-getting-started-with-training-a-machine-learning-model.md
@@ -114,14 +110,11 @@ nav:
       - 'YouTube': 'https://www.youtube.com/c/LambdaLabs'
       - 'Main site': 'https://lambdalabs.com/'
       - 'Tags index': 'tags.md'
-    - We welcome your feedback!:
-      # URL needs to change post migration
-      - 'File an issue': 'https://github.com/LambdaLabs/lambda-docs/issues/new/choose'
-
 markdown_extensions:
   - admonition
   - attr_list
   - md_in_html
+  - pymdownx.details
   - pymdownx.emoji:
       emoji_index: !!python/name:material.extensions.emoji.twemoji
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
