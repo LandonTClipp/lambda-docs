@@ -32,8 +32,8 @@ Recovery ISO images for [Vector](https://lambdalabs.com/gpu-workstations/vector)
 and [Vector One](https://lambdalabs.com/gpu-workstations/vector-one) can be
 downloaded using the following links:
 
-* [Lambda Recovery (Focal)](https://files.lambdalabs.com/recovery/lambda-recovery-focal-20230704.iso) (based on Ubuntu 20.04 LTS _focal_)
-* [Lambda Recovery (Jammy)](https://files.lambdalabs.com/recovery/lambda-recovery-jammy-20230704.iso) (based on Ubuntu 22.04 LTS _jammy_)
+* [Lambda Recovery (Focal)](https://files.lambdalabs.com/recovery/lambda-recovery-focal-20241108.iso) (based on Ubuntu 20.04 LTS _focal_)
+* [Lambda Recovery (Jammy)](https://files.lambdalabs.com/recovery/lambda-recovery-jammy-20241108.iso) (based on Ubuntu 22.04 LTS _jammy_)
 
 ### Tensorbook
 
