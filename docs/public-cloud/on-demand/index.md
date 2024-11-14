@@ -19,10 +19,11 @@ improved bandwidth between the NVIDIA GPUs in a single physical server.
 
     Lambda prohibits cryptocurrency mining on ODC instances.
 
-As of October 2024, ODC offers the following instance types:
+As of November 2024, ODC offers the following instance types:
 
 | GPU        | Number of GPUs | VRAM   | vCPU cores | RAM       | Root volume size |
 |------------|----------------|--------|------------|-----------|------------------|
+| GH200[^1]  | 1              | 96 GB  | 64         | 432 GiB   | 4 TiB            |
 | H100 SXM   | 8              | 80 GB  | 208        | 1800 GiB  | 26 TiB           |
 |            | 8              | 80 GB  | 208        | 1800 GiB  | 22 TiB           |
 |            | 4              | 80 GB  | 104        | 900 GiB   | 11 TiB           |
@@ -41,6 +42,10 @@ As of October 2024, ODC offers the following instance types:
 |            | 1              | 48 GB  | 14         | 100 GiB   | 512 GiB          |
 | Tesla V100 | 8              | 16 GB  | 88         | 448 GiB   | 5.8 TiB          |
 | RTX 6000   | 1              | 24 GB  | 14         | 46 GiB    | 512 GiB          |
+
+[^1]: The NVIDIA GH200 Grace Hopper Superchip features an onboard ARM CPU.
+Verify that your intended workloads run on ARM before choosing this instance
+type.
 
 ## Storage
 
