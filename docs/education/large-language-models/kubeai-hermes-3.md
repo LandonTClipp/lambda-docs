@@ -10,7 +10,7 @@ tags:
 
 ## Introduction
 
-[See our video tutorial on using KubeAI to deploy Nous Research's Hermes 3 and other LLMs.](https://youtu.be/HEtPO2Wuiac?)
+[See our video tutorial on using KubeAI to deploy Nous Research's Hermes 3 and other LLMs.](https://youtu.be/HEtPO2Wuiac?){ .external target="_blank" }
 
 [KubeAI: Private Open AI on Kubernetes](https://github.com/substratusai/kubeai){ .external target="_blank" }
 is a Kubernetes solution for running inference on open-weight large language
