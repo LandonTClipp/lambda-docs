@@ -172,7 +172,7 @@ To start a vLLM API server that serves the Llama 3.1 8B model:
     serving it:
 
     ```bash
-    vllm serve meta-llama/Meta-Llama-3.1-70B-Instruct --dtype auto
+    vllm serve $MODEL_REPO --dtype auto
     ```
 
 ### Test the vLLM API server
