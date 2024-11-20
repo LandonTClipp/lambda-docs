@@ -280,7 +280,7 @@ Multi-GPU instances usually take 10-15 minutes to launch.
 
 !!! note
 
-    Billing starts the moment an instance begins booting.
+    Billing starts after the instance successfully boots and passes health checks.
 
 ## What network bandwidth does Lambda GPU Cloud provide?
 

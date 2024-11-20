@@ -21,6 +21,12 @@ terabytes, and you can have a total of 24 filesystems, except for filesystems
 created in the Texas, USA (us-south-1) region. The capacity of filesystems
 created in the Texas, USA (us-south-1) region is 10 terabytes.
 
+## How do I copy files to and from my filesystems?
+
+You can use `rsync` to copy files to and from Lambda instances and your computer, as well as between instances in the same and different regions.
+
+To learn how to use rsync to copy files between filesystems, see [Importing and exporting data](importing-exporting-data.md).
+
 ## How are filesystems billed?
 
 Persistent storage is billed per GB used per month, in increments of 1 hour.

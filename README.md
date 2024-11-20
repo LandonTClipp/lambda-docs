@@ -80,7 +80,7 @@ Make a local copy of the GitHub repository
 2. Run the container:
 
    ```bash
-   docker run --rm -it -p 8000:8000 -v ${PWD}:/docs lambda-docs-mkdocs serve
+   docker run --rm -it -p 8000:8000 -v ${PWD}:/docs lambda-docs-mkdocs
    ```
 
 3. Once the container is running, open a browser window and paste `http://127.0.0.1:8000/lambda-docs-mkdocs` into the search bar and press enter.
