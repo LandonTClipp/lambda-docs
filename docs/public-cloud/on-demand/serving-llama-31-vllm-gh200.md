@@ -62,12 +62,14 @@ Next, obtain a Hugging Face access token and get approval to access the Llama
 1. Click **Copy** to copy your access token, paste the token somewhere safe
     for future use, and then click **Done** to exit the dialog.
 1. Navigate to the
-    [Llama-3.1-8B-Instruct page](https://huggingface.co/meta-llama/Llama-3.1-8B-Instruct){ target="_blank" .external }
-    and
-    [Llama-3.1-70B-Instruct page](https://huggingface.co/meta-llama/Llama-3.1-70B-Instruct){ target="_blank" .external }. For each model,review and accept the model's license agreement.
-    After you accept each agreement, Hugging Face submits a request to access
-    the model's repository for approval. Approval tends to be fast. You can see
-    the status of each request in your Hugging Face account settings.
+    [Llama-3.1-8B-Instruct page](https://huggingface.co/meta-llama/Llama-3.1-8B-Instruct){ target="_blank" .external },
+    and then review and accept the model's license agreement. After you accept
+    the agreement, Hugging Face submits a request to access the model's
+    repository for approval. On approval, you should gain access to all
+    versions of the model (8B, 70B, and 405B).
+
+    The approval process tends to be fast. You can see the status of the
+    request in your Hugging Face account settings.
 
 ### Set up your Python virtual environment
 
@@ -265,7 +267,7 @@ To serve Llama 3.1 70B using CPU offloading:
     ```
 
 1. Press ++ctrl++ + ++c++ to stop the currently running server.
-1. Start the server again, this time using the Llama 3.1 70B model and adding
+1. Start the server again, this time using the Llama 3.1 70B model and enabling
     CPU offloading by appending the `--cpu-offload-gb` flag.
 
     ```bash
