@@ -80,14 +80,21 @@ Create a new Python virtual environment and install the required libraries:
 1. Make sure that `pip`, `setuptools`, and `wheel` are all up to date:
 
     ```bash
-    python -m pip install -U pip &&
-    python -m pip install -U setuptools wheel
+    python -m pip install -U pip setuptools wheel
     ```
 
 1. Install the latest nightly build of `torch`:
 
     ```bash
-    pip install torch --index-url https://download.pytorch.org/whl/cu124
+    pip install --pre torch --index-url https://download.pytorch.org/whl/nightly/cu124
+    ```
+
+1. Install a version of `fsspec` known to be compatible with the version of
+    the Hugging Face `datasets` library used by recent nightly `torch`
+    releases:
+
+    ```bash
+    pip install fsspec[http]==2024.9.0
     ```
 
 ### Install and configure vLLM
@@ -106,7 +113,7 @@ on GH200 instances:
 
     ```bash
     cd triton/python &&
-    pip install ninja cmake wheel
+    pip install ninja cmake
     ```
 
 1. Install Triton:
@@ -133,7 +140,7 @@ After Triton finishes installing, you can install and configure vLLM:
     ```
 
 1. Install the rest of vLLM's dependencies, and then finish installing
-    vLLM. This step can take several minutes to complete:
+    vLLM. This step can take up to 15 minutes to complete:
 
     ```bash
     pip install -r requirements-build.txt &&
@@ -146,43 +153,49 @@ After Triton finishes installing, you can install and configure vLLM:
 
 To start a vLLM API server that serves the Llama 3.1 8B model:
 
-1. Open your `.bashrc` file for editing:
+1. Set the following environment variables. Replace `<HF-TOKEN>` with your
+    Hugging Face user access token:
 
     ```bash
-    nano ~/.bashrc
-    ```
-
-1. At the bottom of the file, set the following environment variables.
-    Replace `<HF-TOKEN>` with your Hugging Face user access token:
-
-    ```bash
-    export HF_TOKEN=<HF-TOKEN>
-    export HF_HOME="/home/ubuntu/.cache/huggingface"
+    export HF_TOKEN=<HF-TOKEN> ; \
+    export HF_HOME="/home/ubuntu/.cache/huggingface" ; \
     export MODEL_REPO=meta-llama/Meta-Llama-3.1-8B-Instruct
     ```
 
-1. Save and exit.
-1. Update your environment with your new environment variables:
+1. Start a `tmux` session for your vLLM server.
 
     ```bash
-    source ~/.bashrc
+    tmux new-session -s run-vllm
     ```
 
 1. Start the vLLM API server. The server loads your model and then begins
     serving it:
 
     ```bash
-    vllm serve meta-llama/Meta-Llama-3.1-70B-Instruct --dtype auto
+    vllm serve ${MODEL_REPO} --dtype auto
     ```
+
+    When the server is ready, you should see output similar to the following:
+
+    ```text { .no-copy }
+    INFO:     Started server process [12821]
+    INFO:     Waiting for application startup.
+    INFO:     Application startup complete.
+    INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+    ```
+
+    !!! note
+
+        This step might take several minutes to complete.
 
 ### Test the vLLM API server
 
-After the API server loads your model, verify that the server is working as
+Now that your vLLM API server is up and running, verify that it's working as
 expected:
 
-1. In your instance's JupyterHub, click **+** to create a new Launcher tab
-    and then click **Terminal** to open a new terminal.
-1. Send a prompt to the API server:
+1. Detach the `tmux` session for your server by pressing ++ctrl++ + ++b++,
+    then ++d++.
+1. Send a prompt to the server:
 
     ```bash
     curl -X POST http://localhost:8000/v1/completions \
@@ -199,6 +212,15 @@ expected:
 
     ```json { .no-copy }
     {"id":"cmpl-d3a33498b5d74d9ea09a7c256733b8df","object":"text_completion","created":1722545598,"model":"meta-llama/Meta-Llama-3.1-8B-Instruct","choices":[{"index":0,"text":"Paris","logprobs":null,"finish_reason":"length","stop_reason":null}],"usage":{"prompt_tokens":11,"total_tokens":12,"completion_tokens":1}}
+    ```
+
+To return to the `tmux` session for your server:
+
+1. Press ++ctrl++ + ++b++, then ++d++ to detach your current session.
+1. Reattach your vLLM server session:
+
+    ```bash
+    tmux attach-session -t run-vllm
     ```
 
 ### Add a firewall rule
