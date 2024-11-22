@@ -4,12 +4,25 @@ tags:
   - on-demand cloud
 ---
 
-# Serving Llama 3.1 8B using vLLM on an NVIDIA GH200 instance
+# Serving Llama 3.1 8B and 70B using vLLM on an NVIDIA GH200 instance
 
-This tutorial outlines how to serve Llama 3.1 8B using vLLM on an
+This tutorial outlines how to serve Llama 3.1 8B and 70B using vLLM on an
 On-Demand Cloud (ODC) instance backed with the NVIDIA GH200 Grace Hopper
-Superchip. Though the tutorial uses Llama 3.1 8B as its example model, you can
-use these steps to run any appropriately sized model vLLM supports on your
+Superchip. These two models represent two different ways you might serve a
+model on an NVIDIA GH200 instance:
+
+- Llama 3.1 8B fits entirely in the GH200 GPU's VRAM. You can serve this model
+    without additional configuration.
+- Llama 3.1 70B exceeds the GH200 GPU's available memory. However, you can
+    still serve this model on your GH200 instance by offloading the model
+    weights to the onboard CPU's memory. This technique, known as *CPU
+    offloading*, effectively expands the available GPU memory for storing model
+    weights, but requires CPU-GPU data transfer during each forward pass. Due
+    to its high-bandwidth chip-to-chip connection, the GH200 is uniquely
+    suited for offloading tasks like this one.
+
+Though the tutorial focuses on these two Llama models, you can use
+these steps to serve any appropriately sized model vLLM supports on your
 GH200 instance.
 
 ## Setting up your environment
@@ -34,10 +47,10 @@ Begin by launching a GH200 instance:
     start launching your new instance. Instances can take up to five minutes to
     fully launch.
 
-### Get access to Llama 3.1 8B
+### Get access to Llama 3.1 8B and 70B
 
 Next, obtain a Hugging Face access token and get approval to access the Llama
-3.1 8B repository:
+3.1 8B and Llama 3.1 70B repositories:
 
 1. If you don't already have a Hugging Face account,
     [create one](https://huggingface.co/join){ target="_blank" .external }.
@@ -50,10 +63,11 @@ Next, obtain a Hugging Face access token and get approval to access the Llama
     for future use, and then click **Done** to exit the dialog.
 1. Navigate to the
     [Llama-3.1-8B-Instruct page](https://huggingface.co/meta-llama/Llama-3.1-8B-Instruct){ target="_blank" .external }
-    and then review and accept the model's license agreement. After you accept
-    the agreement, Hugging Face submits a request to access the repository for
-    approval. Approval tends to be fast. You can see the status of the request
-    in your Hugging Face account settings.
+    and
+    [Llama-3.1-70B-Instruct page](https://huggingface.co/meta-llama/Llama-3.1-70B-Instruct){ target="_blank" .external }. For each model,review and accept the model's license agreement.
+    After you accept each agreement, Hugging Face submits a request to access
+    the model's repository for approval. Approval tends to be fast. You can see
+    the status of each request in your Hugging Face account settings.
 
 ### Set up your Python virtual environment
 
@@ -149,7 +163,10 @@ After Triton finishes installing, you can install and configure vLLM:
 
 ## Serving a model with vLLM
 
-### Start the vLLM API server
+After vLLM finishes installing, you can start serving models on your vLLM
+instance.
+
+### Serve Llama 3.1 8B using the vLLM API server
 
 To start a vLLM API server that serves the Llama 3.1 8B model:
 
@@ -188,7 +205,7 @@ To start a vLLM API server that serves the Llama 3.1 8B model:
 
         This step might take several minutes to complete.
 
-### Test the vLLM API server
+### Test the vLLM API server { #test-the-vllm-api-server }
 
 Now that your vLLM API server is up and running, verify that it's working as
 expected:
@@ -222,6 +239,47 @@ To return to the `tmux` session for your server:
     ```bash
     tmux attach-session -t run-vllm
     ```
+
+### Serve Llama 3.1 70B using CPU offloading
+
+For models that exceed the GH200's VRAM, such as Llama 3.1 70B, you can use
+CPU offloading to offload model weight storage to the onboard CPU. The
+GH200 features a high-bandwidth connection between its CPU and GPU, which
+can provide significant speed gains for tasks that require CPU offloading.
+
+To serve Llama 3.1 70B using CPU offloading:
+
+1. If needed, press ++ctrl++ + ++b++, then ++d++ to detach your current
+    session.
+1. Set the `MODEL_REPO` environment variable to Llama 3.1 70B instead of
+    Llama 3.1 8B:
+
+    ```bash
+    export MODEL_REPO=meta-llama/Meta-Llama-3.1-70B-Instruct
+    ```
+
+1. Reattach your vLLM server session:
+
+    ```bash
+    tmux attach-session -t run-vllm
+    ```
+
+1. Press ++ctrl++ + ++c++ to stop the currently running server.
+1. Start the server again, this time using the Llama 3.1 70B model and adding
+    CPU offloading by appending the `--cpu-offload-gb` flag.
+
+    ```bash
+    vllm serve ${MODEL_REPO} --dtype auto --cpu-offload-gb 90
+    ```
+
+    !!! note
+
+        This step might take up to 20 minutes to complete.
+
+1. After the model finishes loading and the server starts serving, detach your
+    `tmux` session again.
+1. Send a test prompt as described in the
+    [Testing the vLLM API Server](#test-the-vllm-api-server) section above.
 
 ### Add a firewall rule
 
