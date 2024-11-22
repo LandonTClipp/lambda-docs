@@ -172,7 +172,7 @@ costs:
 ## Next steps
 
 -  To learn how to benchmark your GH200 instance against other instances, see
-    [Running a PyTorch^&reg;^-based benchmark on an NVIDIA GH200 instance](running-benchmark-gh200.md).
+    [Running a PyTorch®-based benchmark on an NVIDIA GH200 instance](running-benchmark-gh200.md).
 -  To explore more Hugging Face libraries, see
     [Libraries](https://huggingface.co/docs/hub/en/models-libraries){ target="_blank" .external }
     in the Hugging Face docs.

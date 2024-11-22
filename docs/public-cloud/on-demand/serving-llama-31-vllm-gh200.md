@@ -227,7 +227,7 @@ To return to the `tmux` session for your server:
 
 Optionally, you can add a firewall rule to allow external traffic to your API
 server. For details, see
-[Firewalls &gt; Creating a firewall rule](../firewalls.md#creating-a-firewall-rule).
+[Firewalls > Creating a firewall rule](../firewalls.md#creating-a-firewall-rule).
 vLLM serves on port 8000 by default.
 
 ## Cleaning up
@@ -245,7 +245,7 @@ unnecessary costs:
 ## Next steps
 
 -  To learn how to benchmark your GH200 instance against other instances, see
-    [Running a PyTorch^&reg;^-based benchmark on an NVIDIA GH200 instance](running-benchmark-gh200.md).
+    [Running a PyTorch®-based benchmark on an NVIDIA GH200 instance](running-benchmark-gh200.md).
 -  For details on using vLLM to serve models on other instance types, see
     [Serving the Llama 3.1 8B and 70B models using Lambda Cloud on-demand instances](../../education/large-language-models/serving-llama-3-1-docker.md).
 -  To learn how to use Hugging Face's Diffusers and Transformers libraries on
