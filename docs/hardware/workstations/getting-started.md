@@ -8,6 +8,8 @@ tags:
 
 # Getting started
 
+[See our video on Lambda's line of Vector desktops and workstations.](https://youtu.be/NaLzEXRb2bw){ .external target="_blank" }
+
 ## How do I set up my workstation?
 
 Instructions for setting up your Vector can be found in our
