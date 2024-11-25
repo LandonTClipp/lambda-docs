@@ -124,6 +124,8 @@ To add another SSH key:
 
 ## Copying data to your 1-Click Cluster
 
+[See our video guide on copying data to your 1-Click Cluster.](https://youtu.be/G3n33x-PudM){ .external target="_blank" }
+
 The recommended way to copy data to your 1CC is to use rsync. rsync allows you to copy files from your computer to your 1CC, as well as directly from a running on-demand instance to your 1CC.
 
 [See our documentation to learn how to use rsync](../../education/linux-usage/basic-linux-commands-and-system-administration.md#using-rsync-to-copy-and-synchronize-files). When following the instructions, replace **SERVER-IP** with the name of one of your management nodes.
