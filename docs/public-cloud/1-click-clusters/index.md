@@ -23,6 +23,8 @@ All 1CC nodes are preinstalled with Ubuntu 22.04 LTS and [Lambda Stack](https://
 
 ## Reserving 1-Click Clusters
 
+[See our video tutorial on how to reserve and launch a 1 Click Cluster.](https://youtu.be/T3_XCX9odTc){ .external target="_blank" }
+
 To reserve a 1CC:
 
 1. [Log into](https://cloud.lambdalabs.com/cloud/login) your Lambda On-Demand Cloud account. If you don’t already have an account, you can [create an account for free](https://cloud.lambdalabs.com/sign-up).
