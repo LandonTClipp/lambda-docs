@@ -1,0 +1,104 @@
+---
+description: Learn how to fine-tune the Mochi video generation model on GH200.
+tags:
+  - generative ai
+  - on-demand cloud
+---
+
+# Fine-tuning the Mochi video generation model on GH200
+
+This guide helps you get started fine-tuning
+[Genmo's Mochi video generation model](https://www.genmo.ai/){ target="_blank" .external }
+using a
+[Lambda On-Demand Cloud](https://lambdalabs.com/service/gpu-cloud){ target="_blank" .external }
+GH200 instance.
+
+## Launch your GH200 instance
+
+Begin by launching a GH200 instance:
+
+1. In the Lambda Cloud console, navigate to the
+    [SSH keys page](https://cloud.lambdalabs.com/ssh-keys){ target="_blank" .external },
+    click **Add SSH Key**, and then add or generate a SSH key.
+1. Navigate to the
+    [Instances page](https://cloud.lambdalabs.com/instances){ target="_blank" .external }
+    and click **Launch Instance**.
+1. Follow the steps in the instance launch wizard.
+    -  _Instance type:_ Select **1x GH200 (96 GB).**
+    -  _Region:_ Select an available region.
+    -  _Filesystem:_ Don't attach a filesystem.
+    -  _SSH key:_ Use the key you created in step 1.
+1. Click **Launch instance**.
+1. Review the EULAs. If you agree to them, click **I agree to the above** to
+    start launching your new instance. Instances can take up to five minutes to
+    fully launch.
+
+## Install dependencies
+
+- Install the dependencies needed for this guide by running:
+
+    ```bash
+    git clone https://github.com/genmoai/mochi-tune.git
+    cd mochi-tune
+    git checkout -b dev/lora
+    git pull origin dev/lora
+    pip install --upgrade pip setuptools wheel packaging
+    pip install -e . --no-build-isolation
+    pip install moviepy==1.0.3 pillow==9.5.0 av==13.1.0
+    sudo apt -y install bc
+    ```
+
+## Download the model weights
+
+- Download the model weights by running:
+
+    ```bash
+    python3 ./scripts/download_weights.py weights/
+    ```
+
+## Prepare your dataset
+
+- Prepare your dataset by following the
+[README for Genmo's Mochi 1 LoRA Fine-tuner](https://github.com/genmoai/mochi-tune/blob/dev/lora/demos/fine_tuner/README.md){ target="_blank" .external }.
+
+## Begin fine-tuning
+
+- Begin fine-tuning by running:
+
+    ```bash
+    bash ./demos/fine_tuner/run.bash -c ./demos/fine_tuner/configs/lora.yaml -n 1
+    ```
+
+You should see output similar to:
+
+```text { .no-copy }
+Starting training with 1 GPU(s), mode: single_gpu
+Using config: ./demos/fine_tuner/configs/lora.yaml
+model=weights/dit.safetensors, optimizer=, start_step_num=0
+Found 44 training videos in videos_prepared
+Loaded 44/44 valid file pairs.
+Loading model
+Training type: LoRA
+Attention mode: sdpa
+...
+10%|█    | 200/2000 [11:17<48:02,  1.60s/it, train/epoch=5, train/loss=0.464, train/lr=0.000199]
+```
+
+## Cleaning up
+
+When you're done with your instances, terminate them to avoid incurring
+unnecessary costs:
+
+1. In the Lambda Cloud console, navigate to the
+    [Instances page](https://cloud.lambdalabs.com/instances){ target="_blank" .external }.
+1. Select the checkboxes of the instances you want to delete.
+1. Click **Terminate**. A dialog appears.
+1. Follow the instructions and then click **Terminate instances** to
+    terminate your instances.
+
+## Next steps
+
+-  To learn how to benchmark your GH200 instance against other instances, see
+    [Running a PyTorch®-based benchmark on an NVIDIA GH200 instance](running-benchmark-gh200.md).
+-  For more tips and tutorials, see our [Education](../../education/index.md)
+    section.
