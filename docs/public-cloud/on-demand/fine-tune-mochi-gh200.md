@@ -40,8 +40,6 @@ Begin by launching a GH200 instance:
     ```bash
     git clone https://github.com/genmoai/mochi-tune.git
     cd mochi-tune
-    git checkout -b dev/lora
-    git pull origin dev/lora
     pip install --upgrade pip setuptools wheel packaging
     pip install -e . --no-build-isolation
     pip install moviepy==1.0.3 pillow==9.5.0 av==13.1.0
