@@ -96,6 +96,19 @@ Moviepy - Building video finetunes/my_mochi_lora/samples/0_200.mp4.
 Moviepy - Writing video finetunes/my_mochi_lora/samples/0_200.mp4
 ```
 
+!!! note
+
+    During the fine-tuning, you'll see messages similar to:
+
+    ```text { .no-copy }
+    W1126 16:46:47.939000 265211801175072 torch/fx/experimental/symbolic_shapes.py:4449] [2/0_1] xindex is not in var_ranges, defaulting to unknown range.
+    W1126 16:46:51.271000 265211801175072 torch/fx/experimental/symbolic_shapes.py:4449] [2/1_1] xindex is not in var_ranges, defaulting to unknown range.
+    W1126 16:46:53.847000 265211801175072 torch/fx/experimental/symbolic_shapes.py:4449] [2/2_1] xindex is not in var_ranges, defaulting to unknown range.
+    W1126 16:46:56.411000 265211801175072 torch/fx/experimental/symbolic_shapes.py:4449] [2/3_1] xindex is not in var_ranges, defaulting to unknown range.
+    ```
+
+    These messages can safely be disregarded.
+
 ## Cleaning up
 
 When you're done with your instances, terminate them to avoid incurring
