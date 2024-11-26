@@ -80,8 +80,20 @@ Loaded 44/44 valid file pairs.
 Loading model
 Training type: LoRA
 Attention mode: sdpa
-...
-10%|█    | 200/2000 [11:17<48:02,  1.60s/it, train/epoch=5, train/loss=0.464, train/lr=0.000199]
+Loading eval pipeline ...
+Timing load_text_encoder
+Timing load_vae
+Stage                   Time(s)    Percent
+load_text_encoder          0.21     17.34%
+load_vae                   1.01     82.66%
+
+[…]
+
+Sampling: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 64/64 [03:33<00:00,  3.33s/it]
+moving model from cpu -> cuda:0████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 64/64 [03:33<00:00,  1.09it/s]
+moving model from cuda:0 -> cpu
+Moviepy - Building video finetunes/my_mochi_lora/samples/0_200.mp4.
+Moviepy - Writing video finetunes/my_mochi_lora/samples/0_200.mp4
 ```
 
 ## Cleaning up
