@@ -38,7 +38,7 @@ Begin by launching a GH200 instance:
 - Install the dependencies needed for this guide by running:
 
     ```bash
-    git clone https://github.com/genmoai/mochi-tune.git
+    git clone https://github.com/genmoai/mochi.git
     cd mochi-tune
     pip install --upgrade pip setuptools wheel packaging
     pip install -e . --no-build-isolation
@@ -57,7 +57,7 @@ Begin by launching a GH200 instance:
 ## Prepare your dataset
 
 - Prepare your dataset by following the
-[README for Genmo's Mochi 1 LoRA Fine-tuner](https://github.com/genmoai/mochi-tune/blob/dev/lora/demos/fine_tuner/README.md){ target="_blank" .external }.
+[README for Genmo's Mochi 1 LoRA Fine-tuner](https://github.com/genmoai/mochi/blob/main/demos/fine_tuner/README.md){ target="_blank" .external }.
 
 ## Begin fine-tuning
 
