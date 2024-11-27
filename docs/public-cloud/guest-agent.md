@@ -70,17 +70,10 @@ To install the guest agent on an on-demand instance:
 First, SSH into your instance by running:
 
 ```bash
-ssh ubuntu@<IP_ADDRESS> -L 3000:localhost:3000
+ssh ubuntu@<IP_ADDRESS>
 ```
 
 Replace `<IP_ADDRESS>` with the actual IP address of your instance.
-
-!!! note
-
-    The `-L 3000:localhost:3000` option enables local port forwarding. Local
-    port forwarding is needed to access the Grafana dashboard you'll create
-    in a later step.
-    [See the SSH man page to learn more](https://manpages.ubuntu.com/manpages/jammy/en/man1/ssh.1.html){ .external target="_blank" }.
 
 Then, download and install the guest agent by running:
 
@@ -133,32 +126,55 @@ and Grafana installation to get access to the guest-agent metrics.
 
 To set up Prometheus and Grafana:
 
+1. SSH into one of your nodes:
+
+    ```
+    $ ssh -L 3000:localhost:3000 192.222.53.85
+    ```
+
+    !!! note "Port Forwarding"
+
+        The `-L 3000:localhost:3000 ` argument specifies to SSH that it should open
+        a tunnel for port `3000`. This will be used for logging into Grafana. This
+        port must be open any time you want to connect to Grafana.
+
 1. Clone the
-   [Awesome Compose GitHub repository](https://github.com/docker/awesome-compose){ .external target="_blank" }
-   and change into the `awesome-compose/prometheus-grafana` directory by
+   [Lambda Labs guest-agent repo](https://github.com/LambdaLabs/guest-agent){ .external target="_blank" }
+   and change into the `guest-agent/prometheus-grafana` directory by
    running:
 
     ```bash
-    git clone https://github.com/docker/awesome-compose.git && cd awesome-compose/prometheus-grafana
+    git clone https://github.com/LambdaLabs/guest-agent.git && cd guest-agent/prometheus-grafana
     ```
 
-1. Obtain the private IP address of your instance by running:
+1. Obtain the IP address of your instances.
 
-    ```bash
-    ip -4 -br addr show eno1 | grep -Eo '(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)'
-    ```
+    === "1CC"
 
-1. Edit the `prometheus/prometheus.yml` file.
+        Use the private IP addresses for your cluster as listed on
+        [cloud.lambdalabs.com](https://cloud.lambdalabs.com){ .external target="_blank" }.
+        When installing Prometheus+Grafana for a 1CC installation, note that the
+        GPU nodes are not publicly routable and can only be accessed from a head
+        node. Because of this, it's recommended to install Prometheus+Grafana
+        directly on a head node and use the private IP addresses as listed on
+        your 1CC status page.
 
-    Under `targets`, change `localhost:9090` to `<PRIVATE_IP_ADDRESS>:9101`.
+    === "On-Demand"
+
+        Use the public IPs of your On-Demand instances if you desire to collect
+        metrics from more than one instance. This means that the node where you
+        install Prometheus must be able to contact other nodes on port `9101`,
+        which may mean [opening a firewall rule](firewalls.md). See the [section
+        below](#on-demand) for more details.
+
+
+
+2. Edit the `prometheus/prometheus.yml` file.
+
+    Under `#!yaml targets:`, change `#!yaml localhost:9101` to `#!yaml <PRIVATE_IP_ADDRESS>:9101`.
 
     Replace `<PRIVATE_IP_ADDRESS>` with the private IP address of your instance,
     which you obtained in the previous step.
-
-    !!! note
-
-        Make sure you're changing both the host and the port. It's frequently
-        overlooked that the port is being changed as well as the host.
 
     In the `prometheus.yml` file, the `scrape_configs` key should look like:
 
@@ -175,7 +191,7 @@ To set up Prometheus and Grafana:
         - PRIVATE-IP-ADDRESS:9101
     ```
 
-1. Edit the `compose.yaml` file and set `GF_SECURITY_ADMIN_PASSWORD` to a strong
+3. Edit the `compose.yaml` file and set `GF_SECURITY_ADMIN_PASSWORD` to a strong
    password.
 
     !!! tip
@@ -183,31 +199,21 @@ To set up Prometheus and Grafana:
         You can generate a strong password by running:
 
         ```bash
-        openssl rand -base64 16
+        openssl rand -base64 32
         ```
 
-1. Start Prometheus and Grafana containers on your instance by running:
+4. Start Prometheus and Grafana containers on your instance by running:
 
     ```bash
     sudo docker compose up -d
     ```
 
-1. In your web browser, go to
+5. In your web browser, go to
    [http://localhost:3000](http://localhost:3000){ .external target="_blank" }
    and log into Grafana. For the username, enter `admin`. For the password,
    enter the password you set earlier.
 
-1. At the top-right of the dashboard, click the **+**. Then, choose **Import
-   dashboard**.
-
-    ![Screenshot of how to import dashboard](../assets/images/import-dashboard.png)
-
-1. In the **Import via dashboard JSON model** field, enter the
-   [example JSON model](https://gist.githubusercontent.com/LandonTClipp/964e90507d660e3fb710b4137be6cd6f/raw/bc7abd797da65581534513c153d1ad3d1b8e4bbe/lambda-guest-agent-grafana-model.json){ .external target="_blank" }
-   prepared for this tutorial, then click **Load**. In the following screen,
-   click **Import**.
-
-1. You'll see a Grafana dashboard displaying:
+6. You'll see a Grafana dashboard displaying:
 
     - CPU usage
     - GPU utilization
